@@ -1,0 +1,22 @@
+out/QueryDSD_StructPlusYahoo -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_50/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/yahoo/200k.txt -maxLeaves 50
+Time per instance per tree(ns): 21.50
+Ignore this number: -887920192.000000
+out/QueryDSD_StructPlusMS -ensemble /home/xin_jin/fast_rank/tree_model/MSLR/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MSLR/200k.txt -maxLeaves 50
+Time per instance per tree(ns): 39.90
+Ignore this number: -489853024.000000
+out/QueryDSD_StructPlusMQ -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/200k.txt -maxLeaves 50
+Time per instance per tree(ns): 51.74
+Ignore this number: -305710336.000000
+out/QueryDSD_StructPlusYahoo -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/200k.txt -maxLeaves 150
+Time per instance per tree(ns): 222.06
+Ignore this number: -176810000.000000
+out/QueryDSD_StructPlusMS -ensemble /home/xin_jin/fast_rank/tree_model/MSLR/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MSLR/200k.txt -maxLeaves 150
+Time per instance per tree(ns): 72.62
+Ignore this number: -579058816.000000
+out/QueryDSD_StructPlusMQ -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/200k.txt -maxLeaves 150
+Time per instance per tree(ns): 108.94
+Ignore this number: -439214400.000000
+
+real	35m58.999s
+user	35m54.259s
+sys	0m2.646s

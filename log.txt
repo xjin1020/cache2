@@ -1,0 +1,21 @@
+Main: creating thread 0
+Main: creating thread 1
+Main: creating thread 2
+Main: creating thread 3
+Thread 3 starting...
+Thread 0 starting...
+Thread 1 starting...
+Thread 2 starting...
+Thread 0's score=-33554432.000000
+Thread 0 done.
+Main: completed join with thread 0 having a status of 0
+Thread 3's score=-33554432.000000
+Thread 3 done.
+Thread 2's score=-33554432.000000
+Thread 2 done.
+Thread 1's score=-33554432.000000
+Thread 1 done.
+Main: completed join with thread 1 having a status of 1
+Main: completed join with thread 2 having a status of 2
+Main: completed join with thread 3 having a status of 3
+Main: program completed. Exiting.
