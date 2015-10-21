@@ -1,5 +1,5 @@
-This github repository includes below parts:
-  /src: source code
+This github repository includes below parts:\\
+  /src: source code\\
   /util: utility code
   /script: auxiliary scripts for stat gathering and parsing
   makefile
