@@ -1,17 +1,15 @@
-This github repository includes below parts: \n
 /src: source code
 
 /util: utility code
 
 /script: auxiliary scripts for stat gathering and parsing
 
-makefile
-
 /out: generated binary files
 
 /jforests: the tool to generate tree models
 
-Data-related resources that are too big to put in github, are placed under zarqa:/tmp/fast_rank, including 
+
+Data-related resources that are too big to put in github, are placed under wuhan:~xin_jin/fast_rank, including 
 
 /input: the input files
 
@@ -19,7 +17,6 @@ Data-related resources that are too big to put in github, are placed under zarqa
 
 /util/ensembles: intermediate ensemble files 
 
-Note that this is not the public release version, because it includes a lot of our auxiliary scripts and unused source code.
 
 sample_run.sh: run a batch of jobs for LEAF number varies from 10 to 50 and 150.
 
