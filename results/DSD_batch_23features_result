@@ -1,0 +1,45 @@
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus2 src/DSD_StructPlus2.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus3 src/DSD_StructPlus3.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus4 src/DSD_StructPlus4.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+DSD1
+Time per instance per tree(ns): 10.33
+Ignore this number: -87025760.000000
+DSD2
+Time per instance per tree(ns): 11.27
+Ignore this number: -51319704.000000
+DSD3
+Time per instance per tree(ns): 14.70
+Ignore this number: -33606212.000000
+DSD4
+Time per instance per tree(ns): 17.50
+Ignore this number: -18733686.000000
+
+make: Nothing to be done for `all'.
+DSD1
+Time per instance per tree(ns): 29.96
+Ignore this number: -197273568.000000
+DSD2
+Time per instance per tree(ns): 26.34
+Ignore this number: -75531488.000000
+DSD3
+Time per instance per tree(ns): 30.81
+Ignore this number: -31822544.000000
+DSD4
+Time per instance per tree(ns): 32.37
+Ignore this number: -28035234.000000
+
+make: Nothing to be done for `all'.
+DSD1
+Time per instance per tree(ns): 61.43
+Ignore this number: -289506240.000000
+DSD2
+Time per instance per tree(ns): 50.42
+Ignore this number: -151431232.000000
+DSD3
+Time per instance per tree(ns): 53.94
+Ignore this number: -70295344.000000
+DSD4
+Time per instance per tree(ns): 55.27
+Ignore this number: -33554392.000000
+
