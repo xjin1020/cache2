@@ -8,7 +8,7 @@
 #include "ParseCommandLine.h"
 
 #define F 11441 // d
-#define T 2621 // s
+#define T 873 // s
 #define NUM_THREADS 1
 
 /**
