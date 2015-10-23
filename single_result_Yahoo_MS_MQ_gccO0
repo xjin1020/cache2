@@ -1,0 +1,786 @@
+gcc -o out/DSDS_StructPlus1 src/DSDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus2 src/DSDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus3 src/DSDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus4 src/DSDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus5 src/DSDS_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus6 src/DSDS_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus7 src/DSDS_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus2 src/DSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus3 src/DSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus4 src/DSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus1 src/SDSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus2 src/SDSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus3 src/SDSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus4 src/SDSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus5 src/SDSD_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus6 src/SDSD_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus7 src/SDSD_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=10
+SDSD1
+Time per instance per tree(ns): 97.04
+Ignore this number: -24949264.000000
+SDSD2
+Time per instance per tree(ns): 44.72
+Ignore this number: -20218334.000000
+SDSD3
+Time per instance per tree(ns): 34.27
+Ignore this number: -21798022.000000
+SDSD4
+Time per instance per tree(ns): 36.38
+Ignore this number: -16169274.000000
+SDSD5
+Time per instance per tree(ns): 46.26
+Ignore this number: -17254448.000000
+SDSD6
+Time per instance per tree(ns): 56.44
+Ignore this number: -14380878.000000
+SDSD7
+Time per instance per tree(ns): 110.28
+Ignore this number: -13742242.000000
+DSDS1
+Time per instance per tree(ns): 65.84
+Ignore this number: -24938618.000000
+DSDS2
+Time per instance per tree(ns): 43.11
+Ignore this number: -24988162.000000
+DSDS3
+Time per instance per tree(ns): 54.02
+Ignore this number: -24958908.000000
+DSDS4
+Time per instance per tree(ns): 54.49
+Ignore this number: -23992410.000000
+DSDS5
+Time per instance per tree(ns): 65.99
+Ignore this number: -24608834.000000
+DSDS6
+Time per instance per tree(ns): 71.94
+Ignore this number: -14354196.000000
+DSDS7
+Time per instance per tree(ns): 92.83
+Ignore this number: -14429607.000000
+SDS1
+Time per instance per tree(ns): 75.48
+Ignore this number: -24954114.000000
+SDS2
+Time per instance per tree(ns): 55.58
+Ignore this number: -20218394.000000
+SDS3
+Time per instance per tree(ns): 72.83
+Ignore this number: -16185918.000000
+SDS4
+Time per instance per tree(ns): 94.88
+Ignore this number: -14429607.000000
+DSD1
+Time per instance per tree(ns): 55.39
+Ignore this number: -24938994.000000
+DSD2
+Time per instance per tree(ns): 37.14
+Ignore this number: -24988192.000000
+DSD3
+Time per instance per tree(ns): 57.80
+Ignore this number: -24012450.000000
+DSD4
+Time per instance per tree(ns): 111.11
+Ignore this number: -13742242.000000
+
+gcc -o out/DSDS_StructPlus1 src/DSDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus2 src/DSDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus3 src/DSDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus4 src/DSDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus5 src/DSDS_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus6 src/DSDS_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus7 src/DSDS_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus1 src/SDSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus2 src/SDSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus3 src/SDSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus4 src/SDSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus5 src/SDSD_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus6 src/SDSD_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus7 src/SDSD_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=50
+SDSD1
+Time per instance per tree(ns): 80.24
+Ignore this number: -1072582400.000000
+SDSD2
+Time per instance per tree(ns): 44.72
+Ignore this number: -883963712.000000
+SDSD3
+Time per instance per tree(ns): 36.24
+Ignore this number: -1082287744.000000
+SDSD4
+Time per instance per tree(ns): 36.01
+Ignore this number: -272391776.000000
+SDSD5
+Time per instance per tree(ns): 36.09
+Ignore this number: -524149888.000000
+SDSD6
+Time per instance per tree(ns): 39.10
+Ignore this number: -33549608.000000
+SDSD7
+Time per instance per tree(ns): 103.73
+Ignore this number: -33214444.000000
+DSDS1
+Time per instance per tree(ns): 77.42
+Ignore this number: -1072005504.000000
+DSDS2
+Time per instance per tree(ns): 37.72
+Ignore this number: -1074264704.000000
+DSDS3
+Time per instance per tree(ns): 56.22
+Ignore this number: -1075098880.000000
+DSDS4
+Time per instance per tree(ns): 54.95
+Ignore this number: -907169152.000000
+DSDS5
+Time per instance per tree(ns): 55.09
+Ignore this number: -1107151616.000000
+DSDS6
+Time per instance per tree(ns): 60.64
+Ignore this number: -62643700.000000
+DSDS7
+Time per instance per tree(ns): 122.56
+Ignore this number: -62024428.000000
+SDS1
+Time per instance per tree(ns): 55.51
+Ignore this number: -1072435456.000000
+SDS2
+Time per instance per tree(ns): 57.90
+Ignore this number: -883963392.000000
+SDS3
+Time per instance per tree(ns): 63.32
+Ignore this number: -289837984.000000
+SDS4
+Time per instance per tree(ns): 130.39
+Ignore this number: -62024428.000000
+DSD1
+Time per instance per tree(ns): 69.96
+Ignore this number: -1071974400.000000
+DSD2
+Time per instance per tree(ns): 37.37
+Ignore this number: -1074263296.000000
+DSD3
+Time per instance per tree(ns): 40.50
+Ignore this number: -907333952.000000
+DSD4
+Time per instance per tree(ns): 104.91
+Ignore this number: -33214444.000000
+
+gcc -o out/DSDS_StructPlus1 src/DSDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus2 src/DSDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus3 src/DSDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus4 src/DSDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus5 src/DSDS_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus6 src/DSDS_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus7 src/DSDS_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus1 src/SDSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus2 src/SDSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus3 src/SDSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus4 src/SDSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus5 src/SDSD_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus6 src/SDSD_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus7 src/SDSD_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=150
+SDSD1
+Time per instance per tree(ns): 394.81
+Ignore this number: -102578904.000000
+SDSD2
+Time per instance per tree(ns): 175.31
+Ignore this number: -102338856.000000
+SDSD3
+Time per instance per tree(ns): 153.69
+Ignore this number: -102559576.000000
+SDSD4
+Time per instance per tree(ns): 161.64
+Ignore this number: -96086608.000000
+SDSD5
+Time per instance per tree(ns): 195.45
+Ignore this number: -101289960.000000
+SDSD6
+Time per instance per tree(ns): 233.26
+Ignore this number: -29299002.000000
+SDSD7
+Time per instance per tree(ns): 389.41
+Ignore this number: -29030298.000000
+DSDS1
+Time per instance per tree(ns): 310.11
+Ignore this number: -102579944.000000
+DSDS2
+Time per instance per tree(ns): 161.03
+Ignore this number: -102616392.000000
+DSDS3
+Time per instance per tree(ns): 190.17
+Ignore this number: -102602712.000000
+DSDS4
+Time per instance per tree(ns): 191.37
+Ignore this number: -100384928.000000
+DSDS5
+Time per instance per tree(ns): 196.53
+Ignore this number: -102098040.000000
+DSDS6
+Time per instance per tree(ns): 218.06
+Ignore this number: -29246400.000000
+DSDS7
+Time per instance per tree(ns): 449.48
+Ignore this number: -29327068.000000
+SDS1
+Time per instance per tree(ns): 394.72
+Ignore this number: -102578904.000000
+SDS2
+Time per instance per tree(ns): 190.92
+Ignore this number: -102338840.000000
+SDS3
+Time per instance per tree(ns): 218.49
+Ignore this number: -96088304.000000
+SDS4
+Time per instance per tree(ns): 450.28
+Ignore this number: -29327068.000000
+DSD1
+Time per instance per tree(ns): 267.64
+Ignore this number: -102580304.000000
+DSD2
+Time per instance per tree(ns): 160.74
+Ignore this number: -102616392.000000
+DSD3
+Time per instance per tree(ns): 231.91
+Ignore this number: -100389248.000000
+DSD4
+Time per instance per tree(ns): 392.56
+Ignore this number: -29030298.000000
+
+gcc -o out/DSDS_StructPlus1 src/DSDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus2 src/DSDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus3 src/DSDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus4 src/DSDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus5 src/DSDS_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus6 src/DSDS_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus7 src/DSDS_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus2 src/DSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus3 src/DSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus4 src/DSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus1 src/SDSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus2 src/SDSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus3 src/SDSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus4 src/SDSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus5 src/SDSD_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus6 src/SDSD_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus7 src/SDSD_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=10
+SDSD1
+Time per instance per tree(ns): 46.28
+Ignore this number: -109284728.000000
+SDSD2
+Time per instance per tree(ns): 34.83
+Ignore this number: -68240360.000000
+SDSD3
+Time per instance per tree(ns): 31.19
+Ignore this number: -87521808.000000
+SDSD4
+Time per instance per tree(ns): 33.84
+Ignore this number: -33341780.000000
+SDSD5
+Time per instance per tree(ns): 43.35
+Ignore this number: -50312984.000000
+SDSD6
+Time per instance per tree(ns): 50.70
+Ignore this number: -16762620.000000
+SDSD7
+Time per instance per tree(ns): 90.44
+Ignore this number: -16336822.000000
+DSDS1
+Time per instance per tree(ns): 46.52
+Ignore this number: -109267840.000000
+DSDS2
+Time per instance per tree(ns): 38.90
+Ignore this number: -96142240.000000
+DSDS3
+Time per instance per tree(ns): 55.09
+Ignore this number: -106323832.000000
+DSDS4
+Time per instance per tree(ns): 56.04
+Ignore this number: -70434848.000000
+DSDS5
+Time per instance per tree(ns): 67.07
+Ignore this number: -85448640.000000
+DSDS6
+Time per instance per tree(ns): 73.70
+Ignore this number: -16774166.000000
+DSDS7
+Time per instance per tree(ns): 93.75
+Ignore this number: -16767956.000000
+SDS1
+Time per instance per tree(ns): 45.04
+Ignore this number: -109325112.000000
+SDS2
+Time per instance per tree(ns): 56.39
+Ignore this number: -68243600.000000
+SDS3
+Time per instance per tree(ns): 74.18
+Ignore this number: -33433042.000000
+SDS4
+Time per instance per tree(ns): 95.11
+Ignore this number: -16767956.000000
+DSD1
+Time per instance per tree(ns): 36.97
+Ignore this number: -109273224.000000
+DSD2
+Time per instance per tree(ns): 34.78
+Ignore this number: -96142608.000000
+DSD3
+Time per instance per tree(ns): 51.39
+Ignore this number: -69226016.000000
+DSD4
+Time per instance per tree(ns): 90.99
+Ignore this number: -16336822.000000
+
+gcc -o out/DSDS_StructPlus1 src/DSDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus2 src/DSDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus3 src/DSDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus4 src/DSDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus5 src/DSDS_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus6 src/DSDS_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus7 src/DSDS_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus1 src/SDSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus2 src/SDSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus3 src/SDSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus4 src/SDSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus5 src/SDSD_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus6 src/SDSD_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus7 src/SDSD_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=50
+SDSD1
+Time per instance per tree(ns): 114.35
+Ignore this number: -245201024.000000
+SDSD2
+Time per instance per tree(ns): 77.65
+Ignore this number: -221728096.000000
+SDSD3
+Time per instance per tree(ns): 73.71
+Ignore this number: -243653440.000000
+SDSD4
+Time per instance per tree(ns): 84.30
+Ignore this number: -132889632.000000
+SDSD5
+Time per instance per tree(ns): 92.58
+Ignore this number: -176517168.000000
+SDSD6
+Time per instance per tree(ns): 125.22
+Ignore this number: -33554430.000000
+SDSD7
+Time per instance per tree(ns): 143.53
+Ignore this number: -33554420.000000
+DSDS1
+Time per instance per tree(ns): 104.59
+Ignore this number: -245204112.000000
+DSDS2
+Time per instance per tree(ns): 79.42
+Ignore this number: -212768112.000000
+DSDS3
+Time per instance per tree(ns): 106.92
+Ignore this number: -237594352.000000
+DSDS4
+Time per instance per tree(ns): 107.56
+Ignore this number: -121766472.000000
+DSDS5
+Time per instance per tree(ns): 114.29
+Ignore this number: -166170576.000000
+DSDS6
+Time per instance per tree(ns): 138.81
+Ignore this number: -33553734.000000
+DSDS7
+Time per instance per tree(ns): 260.77
+Ignore this number: -33540232.000000
+SDS1
+Time per instance per tree(ns): 95.92
+Ignore this number: -245198128.000000
+SDS2
+Time per instance per tree(ns): 108.30
+Ignore this number: -221731440.000000
+SDS3
+Time per instance per tree(ns): 139.51
+Ignore this number: -132995960.000000
+SDS4
+Time per instance per tree(ns): 264.33
+Ignore this number: -33540232.000000
+DSD1
+Time per instance per tree(ns): 88.85
+Ignore this number: -245206256.000000
+DSD2
+Time per instance per tree(ns): 79.61
+Ignore this number: -212768192.000000
+DSD3
+Time per instance per tree(ns): 105.51
+Ignore this number: -121498096.000000
+DSD4
+Time per instance per tree(ns): 145.53
+Ignore this number: -33554420.000000
+
+gcc -o out/DSDS_StructPlus1 src/DSDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus2 src/DSDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus3 src/DSDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus4 src/DSDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus5 src/DSDS_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus6 src/DSDS_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus7 src/DSDS_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus1 src/SDSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus2 src/SDSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus3 src/SDSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus4 src/SDSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus5 src/SDSD_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus6 src/SDSD_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus7 src/SDSD_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=150
+SDSD1
+Time per instance per tree(ns): 193.46
+Ignore this number: -289776992.000000
+SDSD2
+Time per instance per tree(ns): 128.17
+Ignore this number: -289094944.000000
+SDSD3
+Time per instance per tree(ns): 114.57
+Ignore this number: -289778720.000000
+SDSD4
+Time per instance per tree(ns): 123.69
+Ignore this number: -255078864.000000
+SDSD5
+Time per instance per tree(ns): 136.34
+Ignore this number: -282103360.000000
+SDSD6
+Time per instance per tree(ns): 147.81
+Ignore this number: -33554398.000000
+SDSD7
+Time per instance per tree(ns): 193.19
+Ignore this number: -33553940.000000
+DSDS1
+Time per instance per tree(ns): 179.87
+Ignore this number: -289778176.000000
+DSDS2
+Time per instance per tree(ns): 127.34
+Ignore this number: -258541232.000000
+DSDS3
+Time per instance per tree(ns): 164.48
+Ignore this number: -280810784.000000
+DSDS4
+Time per instance per tree(ns): 166.38
+Ignore this number: -150498560.000000
+DSDS5
+Time per instance per tree(ns): 173.86
+Ignore this number: -221759584.000000
+DSDS6
+Time per instance per tree(ns): 198.78
+Ignore this number: -33554432.000000
+DSDS7
+Time per instance per tree(ns): 421.33
+Ignore this number: -33549152.000000
+SDS1
+Time per instance per tree(ns): 198.56
+Ignore this number: -289776992.000000
+SDS2
+Time per instance per tree(ns): 166.57
+Ignore this number: -289094528.000000
+SDS3
+Time per instance per tree(ns): 198.54
+Ignore this number: -255175904.000000
+SDS4
+Time per instance per tree(ns): 423.03
+Ignore this number: -33549152.000000
+DSD1
+Time per instance per tree(ns): 155.27
+Ignore this number: -289783040.000000
+DSD2
+Time per instance per tree(ns): 127.62
+Ignore this number: -258541232.000000
+DSD3
+Time per instance per tree(ns): 159.42
+Ignore this number: -150315216.000000
+DSD4
+Time per instance per tree(ns): 196.68
+Ignore this number: -33553940.000000
+
+gcc -o out/DSDS_StructPlus1 src/DSDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus2 src/DSDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus3 src/DSDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus4 src/DSDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus5 src/DSDS_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus6 src/DSDS_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus7 src/DSDS_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus2 src/DSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus3 src/DSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSD_StructPlus4 src/DSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus1 src/SDSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus2 src/SDSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus3 src/SDSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus4 src/SDSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus5 src/SDSD_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus6 src/SDSD_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus7 src/SDSD_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=10
+SDSD1
+Time per instance per tree(ns): 24.73
+Ignore this number: -71071088.000000
+SDSD2
+Time per instance per tree(ns): 23.00
+Ignore this number: -51481108.000000
+SDSD3
+Time per instance per tree(ns): 21.72
+Ignore this number: -57903692.000000
+SDSD4
+Time per instance per tree(ns): 23.20
+Ignore this number: -30612638.000000
+SDSD5
+Time per instance per tree(ns): 25.99
+Ignore this number: -40964704.000000
+SDSD6
+Time per instance per tree(ns): 27.27
+Ignore this number: -20908366.000000
+SDSD7
+Time per instance per tree(ns): 36.52
+Ignore this number: -21025960.000000
+DSDS1
+Time per instance per tree(ns): 29.35
+Ignore this number: -71079496.000000
+DSDS2
+Time per instance per tree(ns): 27.47
+Ignore this number: -52013004.000000
+DSDS3
+Time per instance per tree(ns): 38.88
+Ignore this number: -59020180.000000
+DSDS4
+Time per instance per tree(ns): 39.18
+Ignore this number: -39487312.000000
+DSDS5
+Time per instance per tree(ns): 42.30
+Ignore this number: -47244572.000000
+DSDS6
+Time per instance per tree(ns): 50.38
+Ignore this number: -21139984.000000
+DSDS7
+Time per instance per tree(ns): 59.96
+Ignore this number: -21021160.000000
+SDS1
+Time per instance per tree(ns): 30.88
+Ignore this number: -71033952.000000
+SDS2
+Time per instance per tree(ns): 40.21
+Ignore this number: -51493228.000000
+SDS3
+Time per instance per tree(ns): 51.76
+Ignore this number: -30935580.000000
+SDS4
+Time per instance per tree(ns): 60.65
+Ignore this number: -21021160.000000
+DSD1
+Time per instance per tree(ns): 24.46
+Ignore this number: -71071568.000000
+DSD2
+Time per instance per tree(ns): 24.13
+Ignore this number: -52013896.000000
+DSD3
+Time per instance per tree(ns): 28.20
+Ignore this number: -38841960.000000
+DSD4
+Time per instance per tree(ns): 37.27
+Ignore this number: -21025960.000000
+
+gcc -o out/DSDS_StructPlus1 src/DSDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus2 src/DSDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus3 src/DSDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus4 src/DSDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus5 src/DSDS_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus6 src/DSDS_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus7 src/DSDS_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus1 src/SDSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus2 src/SDSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus3 src/SDSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus4 src/SDSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus5 src/SDSD_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus6 src/SDSD_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus7 src/SDSD_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=50
+SDSD1
+Time per instance per tree(ns): 64.79
+Ignore this number: -152861264.000000
+SDSD2
+Time per instance per tree(ns): 61.83
+Ignore this number: -135457440.000000
+SDSD3
+Time per instance per tree(ns): 55.07
+Ignore this number: -150450128.000000
+SDSD4
+Time per instance per tree(ns): 57.14
+Ignore this number: -76674568.000000
+SDSD5
+Time per instance per tree(ns): 58.61
+Ignore this number: -108290216.000000
+SDSD6
+Time per instance per tree(ns): 61.21
+Ignore this number: -24734888.000000
+SDSD7
+Time per instance per tree(ns): 70.52
+Ignore this number: -26364366.000000
+DSDS1
+Time per instance per tree(ns): 74.27
+Ignore this number: -152853584.000000
+DSDS2
+Time per instance per tree(ns): 62.93
+Ignore this number: -78688744.000000
+DSDS3
+Time per instance per tree(ns): 93.96
+Ignore this number: -115826056.000000
+DSDS4
+Time per instance per tree(ns): 95.76
+Ignore this number: -34173360.000000
+DSDS5
+Time per instance per tree(ns): 102.77
+Ignore this number: -47252060.000000
+DSDS6
+Time per instance per tree(ns): 121.72
+Ignore this number: -24453160.000000
+DSDS7
+Time per instance per tree(ns): 231.09
+Ignore this number: -22228992.000000
+SDS1
+Time per instance per tree(ns): 68.08
+Ignore this number: -152860176.000000
+SDS2
+Time per instance per tree(ns): 96.63
+Ignore this number: -135460480.000000
+SDS3
+Time per instance per tree(ns): 125.70
+Ignore this number: -76223376.000000
+SDS4
+Time per instance per tree(ns): 237.11
+Ignore this number: -22228992.000000
+DSD1
+Time per instance per tree(ns): 67.30
+Ignore this number: -152848352.000000
+DSD2
+Time per instance per tree(ns): 59.22
+Ignore this number: -78691072.000000
+DSD3
+Time per instance per tree(ns): 64.02
+Ignore this number: -34741656.000000
+DSD4
+Time per instance per tree(ns): 72.47
+Ignore this number: -26364366.000000
+
+gcc -o out/DSDS_StructPlus1 src/DSDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus2 src/DSDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus3 src/DSDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus4 src/DSDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus5 src/DSDS_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus6 src/DSDS_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/DSDS_StructPlus7 src/DSDS_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus1 src/SDSD_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus2 src/SDSD_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus3 src/SDSD_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus4 src/SDSD_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus5 src/SDSD_StructPlus5.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus6 src/SDSD_StructPlus6.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDSD_StructPlus7 src/SDSD_StructPlus7.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O0 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=150
+SDSD1
+Time per instance per tree(ns): 121.24
+Ignore this number: -219609424.000000
+SDSD2
+Time per instance per tree(ns): 119.95
+Ignore this number: -219387488.000000
+SDSD3
+Time per instance per tree(ns): 109.63
+Ignore this number: -219670320.000000
+SDSD4
+Time per instance per tree(ns): 111.50
+Ignore this number: -191847424.000000
+SDSD5
+Time per instance per tree(ns): 112.44
+Ignore this number: -217202288.000000
+SDSD6
+Time per instance per tree(ns): 116.51
+Ignore this number: -33554432.000000
+SDSD7
+Time per instance per tree(ns): 120.91
+Ignore this number: -33554432.000000
+DSDS1
+Time per instance per tree(ns): 146.30
+Ignore this number: -219610528.000000
+DSDS2
+Time per instance per tree(ns): 114.13
+Ignore this number: -135627504.000000
+DSDS3
+Time per instance per tree(ns): 163.02
+Ignore this number: -175182208.000000
+DSDS4
+Time per instance per tree(ns): 165.09
+Ignore this number: -70411680.000000
+DSDS5
+Time per instance per tree(ns): 173.11
+Ignore this number: -96341136.000000
+DSDS6
+Time per instance per tree(ns): 193.93
+Ignore this number: -33554432.000000
+DSDS7
+Time per instance per tree(ns): 416.64
+Ignore this number: -33554544.000000
+SDS1
+Time per instance per tree(ns): 124.77
+Ignore this number: -219609424.000000
+SDS2
+Time per instance per tree(ns): 165.42
+Ignore this number: -219387600.000000
+SDS3
+Time per instance per tree(ns): 194.26
+Ignore this number: -192445264.000000
+SDS4
+Time per instance per tree(ns): 416.28
+Ignore this number: -33554544.000000
+DSD1
+Time per instance per tree(ns): 133.82
+Ignore this number: -219607904.000000
+DSD2
+Time per instance per tree(ns): 114.25
+Ignore this number: -135627504.000000
+DSD3
+Time per instance per tree(ns): 116.76
+Ignore this number: -69785256.000000
+DSD4
+Time per instance per tree(ns): 123.12
+Ignore this number: -33554432.000000
+
