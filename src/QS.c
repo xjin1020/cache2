@@ -6,6 +6,7 @@
 #include <math.h>
 #include "StructPlus.h"
 #include "ParseCommandLine.h"
+#include <stdint.h>
 
 #define F 1
 
@@ -17,6 +18,15 @@
  *              -maxLeaves <max-number-of-leaves> [-print]
  *
  */
+typedef struct QSNode QSNode;
+typedef uint8_t Byte;
+
+struct QSNode {
+  float threshold;
+  unsigned int tree_id;
+  Byte* bitvector; // how many bytes are determined by maxNumberOfLeaves
+};
+
 int nbTrees;
 int maxNumberOfLeaves;
 int numberOfFeatures;
@@ -24,8 +34,26 @@ int numberOfInstances;
 StructPlus** trees; 
 float** features;
 
+// QS parameters
+double* leaves;
+
 void read_ensemble(char* configFile);
 void read_features(char* featureFile);
+
+void traverse_tree(StructPlus* tree)
+{
+
+}
+
+void gen_QS()
+{
+  //leaves
+  leaves = (double *) malloc(maxNumberOfLeaves * nbTrees * sizeof(double));
+  
+  int i;
+  for (i=0; i<nbTrees; i++)
+    traverse_tree(trees[i]);
+}
 
 int main(int argc, char** args) {
   if(!isPresentCL(argc, args, (char*) "-ensemble") ||
@@ -43,9 +71,8 @@ int main(int argc, char** args) {
   read_ensemble(configFile);
   // Read instances (SVM Light format)
   read_features(featureFile);
-     
   // Generate essential QS data structures
-
+  gen_QS();
   // Compute scores for instances using QS algorithm
 
   
@@ -59,6 +86,7 @@ int main(int argc, char** args) {
     free(features[i]);
   }
   free(features);
+  free(leaves);
   return 0;
 }
 
