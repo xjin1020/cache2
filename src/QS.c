@@ -40,9 +40,27 @@ double* leaves;
 void read_ensemble(char* configFile);
 void read_features(char* featureFile);
 
-void traverse_tree(StructPlus* tree)
-{
+int leavesCount;
 
+void traverse_tree(StructPlus* tree, int treeId)
+{
+  if (tree->left == NULL && tree->right == NULL) // leaf node 
+    leaves[leavesCount++] = tree->threshold;
+  else if (tree->left == NULL && tree->right != NULL) // only has right child
+  {
+    printf("Error in traverse_tree! There is a node in Tree %d only has right child", treeId);
+    exit(1);
+  }
+  else if (tree->left != NULL && tree->right == NULL) // only has left child
+  {
+    printf("Error in traverse_tree! There is a node in Tree %d only has left child", treeId);
+    exit(1);
+  }
+  else // node has both left and right child
+  {
+    traverse_tree(tree->left, treeId);
+    traverse_tree(tree->right, treeId);
+  }
 }
 
 void gen_QS()
@@ -51,8 +69,10 @@ void gen_QS()
   leaves = (double *) malloc(maxNumberOfLeaves * nbTrees * sizeof(double));
   
   int i;
+  leavesCount = 0;
   for (i=0; i<nbTrees; i++)
-    traverse_tree(trees[i]);
+    traverse_tree(trees[i], i);
+  printf("Finish saving leaves. There are %d leaves.", leavesCount);
 }
 
 int main(int argc, char** args) {
