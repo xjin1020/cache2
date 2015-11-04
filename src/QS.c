@@ -36,43 +36,51 @@ float** features;
 
 // QS parameters
 double* leaves;
+StructPlus** leavesContent;
 
 void read_ensemble(char* configFile);
 void read_features(char* featureFile);
 
 int leavesCount;
 
-void traverse_tree(StructPlus* tree, int treeId)
+void traverse_tree_for_leaves(StructPlus* tree, int treeId)
 {
   if (tree->left == NULL && tree->right == NULL) // leaf node 
-    leaves[leavesCount++] = tree->threshold;
+  {
+    leaves[leavesCount] = tree->threshold;
+    leavesContent[leavesCount] = tree;
+    leavesCount++;
+  }
   else if (tree->left == NULL && tree->right != NULL) // only has right child
   {
-    printf("Error in traverse_tree! There is a node in Tree %d only has right child", treeId);
+    printf("Error in traverse_tree_for_leaves! There is a node in Tree %d only has right child", treeId);
     exit(1);
   }
   else if (tree->left != NULL && tree->right == NULL) // only has left child
   {
-    printf("Error in traverse_tree! There is a node in Tree %d only has left child", treeId);
+    printf("Error in traverse_tree_for_leaves! There is a node in Tree %d only has left child", treeId);
     exit(1);
   }
   else // node has both left and right child
   {
-    traverse_tree(tree->left, treeId);
-    traverse_tree(tree->right, treeId);
+    traverse_tree_for_leaves(tree->left, treeId);
+    traverse_tree_for_leaves(tree->right, treeId);
   }
 }
 
 void gen_QS()
 {
-  //leaves
+  // deal with leaves data structure
   leaves = (double *) malloc(maxNumberOfLeaves * nbTrees * sizeof(double));
-  
+  leavesContent = (StructPlus **) malloc(maxNumberOfLeaves * nbTrees * sizeof(StructPlus *));
+
   int i;
   leavesCount = 0;
   for (i=0; i<nbTrees; i++)
-    traverse_tree(trees[i], i);
+    traverse_tree_for_leaves(trees[i], i);
   printf("Finish saving leaves. There are %d leaves.", leavesCount);
+
+  // deal with inner node, generate QSNode data structure
 }
 
 int main(int argc, char** args) {
@@ -106,7 +114,7 @@ int main(int argc, char** args) {
     free(features[i]);
   }
   free(features);
-  free(leaves);
+  free(leaves); free(leavesContent);
   return 0;
 }
 
