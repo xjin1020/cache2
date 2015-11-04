@@ -126,6 +126,14 @@ void traverse_tree_for_inner(StructPlus* tree, int treeId)
   traverse_tree_for_inner(tree->right, treeId);
 }
 
+
+void sort_and_gen()
+{
+  // 1. Use an array to save QSNodes of each feature.
+  // 2. For each array, sort it by thresholds.
+  // 3. Generate the related data structures: thresholds, tree_ids, bitvectors and offsets.
+}
+
 void gen_QS()
 {
   // deal with leaves data structure
@@ -154,6 +162,8 @@ void gen_QS()
   for (i=0; i<nbTrees; i++)
     traverse_tree_for_inner(trees[i], i);
   printf("Finish saving innerNodes. There are %d innerNode.\n", innerNodeCount);
+  // sort by features and generate QS data structures
+  sort_and_gen();
 }
 
 int main(int argc, char** args) {
