@@ -126,12 +126,43 @@ void traverse_tree_for_inner(StructPlus* tree, int treeId)
   traverse_tree_for_inner(tree->right, treeId);
 }
 
+// compare function for qsort
+// sort according to threshold from small to large
+int mycmp(const void *a, const void *b)
+{
+  if ((*(QSNode **)a)->threshold <= (*(QSNode **)b)->threshold) 
+    return -1;
+  else 
+    return 1;
+}
 
+// sort each feature array by its elements' thresholds and then generate required data structures
 void sort_and_gen()
 {
   // 1. Use an array to save QSNodes of each feature.
+  QSNode ***featureQSNode = (QSNode ***) malloc(numberOfFeatures * sizeof(QSNode **));
+  int i, j;
+  int *featureQSNodeCount = (int *) malloc(numberOfFeatures * sizeof(int));
+  for (i=0; i<numberOfFeatures; i++) {
+    featureQSNode[i] = (QSNode **) malloc(maxNumberOfLeaves * nbTrees * sizeof(QSNode *));
+    featureQSNodeCount[i] = 0;
+  }
+  for (i=0; i<innerNodeCount; i++) {
+    int currentFid = innerNode[i].fid;
+    featureQSNode[currentFid][featureQSNodeCount[currentFid]] = &innerNode[i];
+    featureQSNodeCount[currentFid]++;
+  }
   // 2. For each array, sort it by thresholds.
+  for (i=0; i<numberOfFeatures; i++) {
+    if (featureQSNodeCount[i] > 1)
+      qsort(featureQSNode[i], featureQSNodeCount[i], sizeof(QSNode *), mycmp);
+  }
   // 3. Generate the related data structures: thresholds, tree_ids, bitvectors and offsets.
+  // 4. free space
+  free(featureQSNodeCount);
+  for (i=0; i<numberOfFeatures; i++)
+    free(featureQSNode[i]);
+  free(featureQSNode);
 }
 
 void gen_QS()
