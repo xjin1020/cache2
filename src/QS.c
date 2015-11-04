@@ -23,6 +23,7 @@ typedef uint8_t Byte;
 
 struct QSNode {
   float threshold;
+  int fid;
   unsigned int tree_id;
   Byte* bitvector; // how many bytes are determined by maxNumberOfLeaves
 };
@@ -42,6 +43,9 @@ void read_ensemble(char* configFile);
 void read_features(char* featureFile);
 
 int leavesCount;
+int innerNodeCount;
+QSNode* innerNode;
+int b; // number of bytes for the bitvector
 
 void traverse_tree_for_leaves(StructPlus* tree, int treeId)
 {
@@ -68,6 +72,60 @@ void traverse_tree_for_leaves(StructPlus* tree, int treeId)
   }
 }
 
+// set the node's all leaves' bit to 0
+void setLeafBit(Byte* bv, StructPlus* tree, int treeId)
+{
+  int i;
+  // if the node is a leaf, check leavesContent to find its position
+  if (tree->left == NULL && tree->right == NULL)
+  {
+    for (i=0; i<maxNumberOfLeaves; i++)
+      // check all the maxNumberOfLeaves leaves of the tree to find which the leaf id
+      if (leavesContent[treeId * maxNumberOfLeaves + i] == tree)
+      {
+        //if found
+        int divide = i/8;
+        int remainder = i%8;
+        bv[divide] &= !((Byte)0x01 << (7-remainder));
+        break;
+      }
+  }
+  else
+  {
+    setLeafBit(bv, tree->left, treeId);
+    setLeafBit(bv, tree->right, treeId);
+  }
+}
+
+void calBitvector(Byte* bv, StructPlus* tree, int treeId)
+{
+  // Initialize the bitvector of this node to all '1'
+  int i;
+  for (i=0; i<b; i++)
+    bv[i] = (Byte)0xff;
+  // Then set all leaves of the left child's bit to '0'
+  setLeafBit(bv, tree->left, treeId);
+}
+
+void traverse_tree_for_inner(StructPlus* tree, int treeId)
+{
+  // Since traverse_tree_for_leaves has checked there are no nodes with 1 child, we don't need to check here again. Just categorize all nodes into two categories: leaves and inner nodes. Here, we only deal with inner nodes.
+  if (tree->left == NULL && tree->right == NULL)
+    return;
+  // deal with an inner node
+  innerNode[innerNodeCount].threshold = tree->threshold;
+  innerNode[innerNodeCount].fid = tree->fid;
+  innerNode[innerNodeCount].tree_id = treeId;
+  Byte* bv = (Byte *) malloc(b*sizeof(Byte));
+  innerNode[innerNodeCount].bitvector = bv;
+  // calculate bitvector for the node tree using the structure of the tree
+  calBitvector(bv, tree, treeId);
+  innerNodeCount++;
+  // recursion for left and right
+  traverse_tree_for_inner(tree->left, treeId);
+  traverse_tree_for_inner(tree->right, treeId);
+}
+
 void gen_QS()
 {
   // deal with leaves data structure
@@ -78,9 +136,24 @@ void gen_QS()
   leavesCount = 0;
   for (i=0; i<nbTrees; i++)
     traverse_tree_for_leaves(trees[i], i);
-  printf("Finish saving leaves. There are %d leaves.", leavesCount);
+  printf("Finish saving leaves. There are %d leaves.\n", leavesCount);
+  if (leavesCount != maxNumberOfLeaves * nbTrees)
+  {
+    printf ("Error in gen_QS! leavesCount != maxNumberOfLeaves * nbTrees, we cannot align leaves correctly in the leaveContent array\n");
+    exit(1);
+  }
 
   // deal with inner node, generate QSNode data structure
+  innerNodeCount = 0;
+  innerNode = (QSNode *) malloc (maxNumberOfLeaves * nbTrees * sizeof(QSNode));
+  // calculate bitvector size needed
+  if (numberOfFeatures % 8 == 0)
+    b = numberOfFeatures / 8;
+  else
+    b = numberOfFeatures / 8 + 1;
+  for (i=0; i<nbTrees; i++)
+    traverse_tree_for_inner(trees[i], i);
+  printf("Finish saving innerNodes. There are %d innerNode.\n", innerNodeCount);
 }
 
 int main(int argc, char** args) {
@@ -115,6 +188,9 @@ int main(int argc, char** args) {
   }
   free(features);
   free(leaves); free(leavesContent);
+  for (i=0; i<innerNodeCount; i++)
+    free(innerNode[i].bitvector);
+  free(innerNode);
   return 0;
 }
 
