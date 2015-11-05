@@ -38,6 +38,10 @@ float** features;
 // QS parameters
 double* leaves;
 StructPlus** leavesContent;
+float *thresholds;
+unsigned int *tree_ids;
+Byte** bitvectors;
+unsigned int *offsets;
 
 void read_ensemble(char* configFile);
 void read_features(char* featureFile);
@@ -86,7 +90,7 @@ void setLeafBit(Byte* bv, StructPlus* tree, int treeId)
         //if found
         int divide = i/8;
         int remainder = i%8;
-        bv[divide] &= !((Byte)0x01 << (7-remainder));
+        bv[divide] &= ~((Byte)0x01 << (7-remainder));
         break;
       }
   }
@@ -136,6 +140,7 @@ int mycmp(const void *a, const void *b)
     return 1;
 }
 
+
 // sort each feature array by its elements' thresholds and then generate required data structures
 void sort_and_gen()
 {
@@ -158,11 +163,47 @@ void sort_and_gen()
       qsort(featureQSNode[i], featureQSNodeCount[i], sizeof(QSNode *), mycmp);
   }
   // 3. Generate the related data structures: thresholds, tree_ids, bitvectors and offsets.
+  thresholds = (float *) malloc(innerNodeCount * sizeof(float));
+  tree_ids = (unsigned int*) malloc(innerNodeCount * sizeof(unsigned int));
+  offsets = (unsigned int*) malloc(numberOfFeatures * sizeof(unsigned int));
+  bitvectors = (Byte **) malloc(innerNodeCount * sizeof(Byte *));
+  for (i=0; i<innerNodeCount; i++)
+    bitvectors[i] = (Byte *) malloc(b*sizeof(Byte));
+  int counter=0;
+  for (i=0; i<numberOfFeatures; i++) {
+    offsets[i] = counter;
+    for (j=0; j<featureQSNodeCount[i]; j++) {
+      thresholds[counter] = featureQSNode[i][j]->threshold;
+      tree_ids[counter] = featureQSNode[i][j]->tree_id;
+      int l;
+      for (l=0; l<b; l++)
+        bitvectors[counter][l] = featureQSNode[i][j]->bitvector[l];
+      counter++;
+    }
+  }
+
+  printf("Finish generating essential QS data structures.\n");
   // 4. free space
   free(featureQSNodeCount);
   for (i=0; i<numberOfFeatures; i++)
     free(featureQSNode[i]);
   free(featureQSNode);
+  
+  // print as testing
+  /*
+  printf("counter=%d\noffsets:", counter);
+  for (i=0; i<numberOfFeatures; i++)
+    printf("%d\t", offsets[i]);
+  printf("\n");
+  for (i=0; i<counter; i++)
+  {
+    printf("i=%d", i);
+    printf(" thresholds[i]=%f tree_ids[i]=%d bitvector[i]:", thresholds[i], tree_ids[i]);
+    for (j=0; j<b; j++)
+      printf("%d ", bitvectors[i][j]);
+    printf("\n");
+  }
+  */
 }
 
 void gen_QS()
@@ -227,11 +268,14 @@ int main(int argc, char** args) {
   for(i = 0; i < numberOfInstances; i++) {
     free(features[i]);
   }
-  free(features);
-  free(leaves); free(leavesContent);
+  free(features);free(leaves); free(leavesContent);
   for (i=0; i<innerNodeCount; i++)
     free(innerNode[i].bitvector);
   free(innerNode);
+  free(thresholds); free(tree_ids); free(offsets);
+  for (i=0; i<innerNodeCount; i++)
+    free(bitvectors[i]);
+  free(bitvectors);
   return 0;
 }
 
