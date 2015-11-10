@@ -51,6 +51,78 @@ int innerNodeCount;
 QSNode* innerNode;
 int b; // number of bytes for the bitvector
 
+Byte** v; // vectors to save results
+
+// Compute scores for instances using QS algorithm
+void compute_QS()
+{
+  int i, j;
+  v = (Byte**) malloc(nbTrees * sizeof(Byte*)); 
+  for (i=0; i<nbTrees; i++)
+    v[i] = (Byte*) malloc(b * sizeof(Byte));
+
+  int k, p, h, begin, end;
+  double score, sum;
+  struct timeval tstart, tend;
+  // for each instance, do QS algorithm
+  gettimeofday(&tstart, NULL);
+  for (i=0; i<numberOfInstances; i++) {
+    // init v to be 11..1
+    for (j=0; j<nbTrees; j++)
+      for (k=0; k<b; k++)
+        v[j][k] = 0xff;
+    // Step 1:
+    for (j=0; j<numberOfFeatures; j++) {
+      begin = offsets[j];
+      end = offsets[j+1]; // what we need to test is [begin, end)
+      if (begin == end)
+        continue;
+      p = begin; // pointer
+      while (features[i][j] > thresholds[p]) // still false node
+      {
+        h = tree_ids[p]; // find current tree_id
+        for (k=0; k<b; k++) // and bitvector
+          v[h][k] &= bitvectors[p][k];
+        p++;
+        if (p >= end)
+          break;
+      }
+    }
+    // Step 2:
+    
+    score = 0;
+    Byte test;
+    for (h=0; h<nbTrees; h++)
+    {
+      // for each tree, find the left most 1 of v[h] and assign it to j
+      j = 0;
+      for (k=0; k<b; k++) {
+        int y, z;
+        for (z=0; z<8; z++) {
+          test = 0x80; // test = 1000 0000 
+          for (y=0; y<z; y++)
+            test = test >> 1;
+          if (v[h][k] & test != 0) // found!
+          {
+            k=b;
+            break;
+          }
+          j++;
+        } // loop z
+      } // loop k
+      int l = h * maxNumberOfLeaves + j;
+      score += leaves[l];
+    }
+    sum += score;
+  }
+  gettimeofday(&tend, NULL);
+  printf("Time per instance (ns): %5.2f\n", 
+      (((tend.tv_sec * 1000000 + tend.tv_usec) - 
+        (tstart.tv_sec * 1000000 + tstart.tv_usec))*1000/((float) numberOfInstances * nbTrees)));
+  printf("Ignore this number: %lf\n", sum);
+}
+
+
 void traverse_tree_for_leaves(StructPlus* tree, int treeId)
 {
   if (tree->left == NULL && tree->right == NULL) // leaf node 
@@ -165,7 +237,7 @@ void sort_and_gen()
   // 3. Generate the related data structures: thresholds, tree_ids, bitvectors and offsets.
   thresholds = (float *) malloc(innerNodeCount * sizeof(float));
   tree_ids = (unsigned int*) malloc(innerNodeCount * sizeof(unsigned int));
-  offsets = (unsigned int*) malloc(numberOfFeatures * sizeof(unsigned int));
+  offsets = (unsigned int*) malloc((numberOfFeatures+1) * sizeof(unsigned int));
   bitvectors = (Byte **) malloc(innerNodeCount * sizeof(Byte *));
   for (i=0; i<innerNodeCount; i++)
     bitvectors[i] = (Byte *) malloc(b*sizeof(Byte));
@@ -181,6 +253,7 @@ void sort_and_gen()
       counter++;
     }
   }
+  offsets[numberOfFeatures] = counter; // write the last offsets
 
   printf("Finish generating essential QS data structures.\n");
   // 4. free space
@@ -257,7 +330,7 @@ int main(int argc, char** args) {
   // Generate essential QS data structures
   gen_QS();
   // Compute scores for instances using QS algorithm
-
+  compute_QS();
   
   // Free used memory
   int tindex, i;
@@ -276,6 +349,9 @@ int main(int argc, char** args) {
   for (i=0; i<innerNodeCount; i++)
     free(bitvectors[i]);
   free(bitvectors);
+  for (i=0; i<nbTrees; i++)
+    free(v[i]);
+  free(v);
   return 0;
 }
 
