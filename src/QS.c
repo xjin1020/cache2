@@ -300,10 +300,10 @@ void gen_QS()
   innerNodeCount = 0;
   innerNode = (QSNode *) malloc (maxNumberOfLeaves * nbTrees * sizeof(QSNode));
   // calculate bitvector size needed
-  if (numberOfFeatures % 8 == 0)
-    b = numberOfFeatures / 8;
+  if (maxNumberOfLeaves % 8 == 0)
+    b = maxNumberOfLeaves / 8;
   else
-    b = numberOfFeatures / 8 + 1;
+    b = maxNumberOfLeaves / 8 + 1;
   for (i=0; i<nbTrees; i++)
     traverse_tree_for_inner(trees[i], i);
   printf("Finish saving innerNodes. There are %d innerNode.\n", innerNodeCount);
