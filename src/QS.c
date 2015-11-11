@@ -19,7 +19,7 @@
  *
  */
 typedef struct QSNode QSNode;
-typedef uint8_t Byte;
+typedef uint32_t Byte;
 
 struct QSNode {
   float threshold;
@@ -49,7 +49,7 @@ void read_features(char* featureFile);
 int leavesCount;
 int innerNodeCount;
 QSNode* innerNode;
-int b; // number of bytes for the bitvector
+int b; // number of Bytes(32bit Byte) for the bitvector
 
 Byte** v; // vectors to save results
 
@@ -70,8 +70,9 @@ void compute_QS()
     // init v to be 11..1
     for (j=0; j<nbTrees; j++)
       for (k=0; k<b; k++)
-        v[j][k] = 0xff;
+        v[j][k] = 0xffffffff;
     // Step 1:
+     
     for (j=0; j<numberOfFeatures; j++) {
       begin = offsets[j];
       end = offsets[j+1]; // what we need to test is [begin, end)
@@ -82,8 +83,14 @@ void compute_QS()
       {
         h = tree_ids[p]; // find current tree_id
         for (k=0; k<b; k++) // and bitvector
+        { 
           v[h][k] &= bitvectors[p][k];
+          //v[h][k] &= bitvectors[p+1][k];
+          //v[h][k] &= bitvectors[p+2][k];
+          //v[h][k] &= bitvectors[p+3][k];
+        }
         p++;
+        //p+=4;
         if (p >= end)
           break;
       }
@@ -98,8 +105,8 @@ void compute_QS()
       j = 0;
       for (k=0; k<b; k++) {
         int y, z;
-        for (z=0; z<8; z++) {
-          test = 0x80; // test = 1000 0000 
+        for (z=0; z<32; z++) {
+          test = 0x80000000; // test = 1000 0000 ... 0000
           for (y=0; y<z; y++)
             test = test >> 1;
           if (v[h][k] & test != 0) // found!
@@ -160,9 +167,9 @@ void setLeafBit(Byte* bv, StructPlus* tree, int treeId)
       if (leavesContent[treeId * maxNumberOfLeaves + i] == tree)
       {
         //if found
-        int divide = i/8;
-        int remainder = i%8;
-        bv[divide] &= ~((Byte)0x01 << (7-remainder));
+        int divide = i/32;
+        int remainder = i%32;
+        bv[divide] &= ~((Byte)1 << (31-remainder));
         break;
       }
   }
@@ -178,7 +185,7 @@ void calBitvector(Byte* bv, StructPlus* tree, int treeId)
   // Initialize the bitvector of this node to all '1'
   int i;
   for (i=0; i<b; i++)
-    bv[i] = (Byte)0xff;
+    bv[i] = (Byte)0xffffffff;
   // Then set all leaves of the left child's bit to '0'
   setLeafBit(bv, tree->left, treeId);
 }
@@ -300,10 +307,10 @@ void gen_QS()
   innerNodeCount = 0;
   innerNode = (QSNode *) malloc (maxNumberOfLeaves * nbTrees * sizeof(QSNode));
   // calculate bitvector size needed
-  if (maxNumberOfLeaves % 8 == 0)
-    b = maxNumberOfLeaves / 8;
+  if (maxNumberOfLeaves % 32 == 0)
+    b = maxNumberOfLeaves / 32;
   else
-    b = maxNumberOfLeaves / 8 + 1;
+    b = maxNumberOfLeaves / 32 + 1;
   for (i=0; i<nbTrees; i++)
     traverse_tree_for_inner(trees[i], i);
   printf("Finish saving innerNodes. There are %d innerNode.\n", innerNodeCount);
