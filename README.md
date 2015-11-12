@@ -21,3 +21,8 @@ Data-related resources that are too big to put in github, are placed under wuhan
 sample_run.sh: run a batch of jobs for LEAF number varies from 10 to 50 and 150.
 
 post.sh: after running sample_run.sh, use post.sh to generate google_doc results
+
+By Xin Jin
+Nov. 12 2016
+src/QS.c: implement Italian group QS algorithm
+src/QS_4.c: QS algorithm with jump 4 at a time, even slower than QS.c
