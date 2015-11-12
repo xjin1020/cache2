@@ -61,7 +61,7 @@ void compute_QS()
   for (i=0; i<nbTrees; i++)
     v[i] = (Byte*) malloc(b * sizeof(Byte));
 
-  int k, p, h, begin, end;
+  int l, k, p, h, begin, end;
   double score, sum;
   struct timeval tstart, tend;
   // for each instance, do QS algorithm
@@ -80,14 +80,40 @@ void compute_QS()
         continue;
       p = begin; // pointer
       
-      while (p<end && features[i][j] > thresholds[p]) // still false node
+      const int GAP = 8;
+      // deal with the first element then GAP elements at a time for fast jump
+      if (features[i][j] > thresholds[p]) // the first element is a false node
       {
         h = tree_ids[p]; // find current tree_id
-        for (k=0; k<b; k++) // AND bitvector
+        for (k=0; k<b; k++) // AND bitvectors
           v[h][k] &= bitvectors[p][k];
-        p++;
-      } // endwhile
+        p += GAP;
+        // then deal with the following p, GAP at a time
+        while (p<end && features[i][j] > thresholds[p]) // still false node, so we need to deal with p, p-1, p-2, ..., p-(GAP-1)
+        {
+          // deal with GAP elements at a time
+          for (l=0; l<GAP; l++)
+          {
+            h = tree_ids[p-l]; // find current tree_id
+            for (k=0; k<b; k++) // AND bitvector
+              v[h][k] &= bitvectors[p-l][k];
+          }
+          p += GAP;
+        } // endwhile
         
+        // deal with p-1, p-2, ..., p-(GAP-1)
+        int last= p-1;
+        if (end-1 < last)           
+          last = end-1;
+        for (l=p-(GAP-1); l<=last; l++){
+          if (features[i][j] < thresholds[l]) // true node
+            break;
+          h = tree_ids[l];
+          for (k=0; k<b; k++) // AND bitvector
+            v[h][k] &= bitvectors[l][k];
+        }
+      } //endif
+
     }
     // Step 2:
     
