@@ -80,7 +80,7 @@ void compute_QS()
         continue;
       p = begin; // pointer
       
-      const int GAP = 8;
+      const int GAP = 4;
       // deal with the first element then GAP elements at a time for fast jump
       if (features[i][j] > thresholds[p]) // the first element is a false node
       {
