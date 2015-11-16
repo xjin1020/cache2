@@ -9,7 +9,7 @@
 #include <stdint.h>
 
 #define F 1
-
+#define G 16
 /**
  * Driver that evaluates test instances using the StructPlus
  * implementation. Use the following command to run this driver:
@@ -76,17 +76,25 @@ void compute_QS()
     for (j=0; j<numberOfFeatures; j++) {
       begin = offsets[j];
       end = offsets[j+1]; // what we need to test is [begin, end)
-      if (begin == end)
+      if (begin == end || features[i][j] <= thresholds[begin])
         continue;
       p = begin; // pointer
-      
       while (p<end && features[i][j] > thresholds[p]) // still false node
       {
-        h = tree_ids[p]; // find current tree_id
-        v[h] &= mybitvectors[p];
-        p++;
+        for (k=0; k<G; k++){
+          h = tree_ids[p+k]; // find current tree_id
+          v[h] &= mybitvectors[p+k];
+        }
+        p+=G; 
       } // endwhile
-        
+      for (k=p-G+1; k<p; k++)
+      {
+        if (k>=end || features[i][j] <= thresholds[k])
+          break;
+        h = tree_ids[k];
+        v[h] &= mybitvectors[k];
+      }
+
     }
     // Step 2:
     
