@@ -72,6 +72,7 @@ void compute_QS()
     for (j=0; j<nbTrees; j++)
         v[j] = 0xffff;
     // Step 1:
+    int h0, h1, h2, h3;
     for (j=0; j<numberOfFeatures; j++) {
       begin = offsets[j];
       end = offsets[j+1]; // what we need to test is [begin, end)
@@ -80,13 +81,15 @@ void compute_QS()
       p = begin; // pointer
       while (p<end && features[i][j] > thresholds[p]) // still false node
       {
-        
-        for (k=0; k<G; k++){
-          h = tree_ids[p+k]; // find current tree_id
-          v[h] &= mybitvectors[p+k];
-        }
-
-        p+=G;
+        h0 = tree_ids[p]; // find current tree_id
+        h1 = tree_ids[p+1]; // find current tree_id
+        h2 = tree_ids[p+2]; // find current tree_id
+        h3 = tree_ids[p+3]; // find current tree_id
+        v[h0] &= mybitvectors[p];
+        v[h1] &= mybitvectors[p+1];
+        v[h2] &= mybitvectors[p+2];
+        v[h3] &= mybitvectors[p+3];
+        p += 4;
       } // endwhile
       for (k=p-G+1; k<p; k++)
       {
