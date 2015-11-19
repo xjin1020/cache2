@@ -39,10 +39,10 @@ float** features;
 // BWQS parameters, comparing QS, there is one more * which is for MetaTrees
 double** leaves;
 StructPlus*** leavesContent;
-float *thresholds;
-unsigned int *tree_ids;
-Byte** bitvectors;
-unsigned int *offsets;
+float **thresholds;
+unsigned int **tree_ids;
+Byte*** bitvectors;
+unsigned int **offsets;
 
 void read_ensemble(char* configFile);
 void read_features(char* featureFile);
@@ -157,7 +157,7 @@ void setLeafBit(Byte* bv, StructPlus* tree, int treeId)
   {
     for (i=0; i<maxNumberOfLeaves; i++)
       // check all the maxNumberOfLeaves leaves of the tree to find which the leaf id
-      if (leavesContent[treeId * maxNumberOfLeaves + i] == tree)
+      if (leavesContent[treeId/S][(treeId%S) * maxNumberOfLeaves + i] == tree)
       {
         //if found
         int divide = i/16;
@@ -189,14 +189,14 @@ void traverse_tree_for_inner(StructPlus* tree, int treeId)
   if (tree->left == NULL && tree->right == NULL)
     return;
   // deal with an inner node
-  innerNode[innerNodeCount].threshold = tree->threshold;
-  innerNode[innerNodeCount].fid = tree->fid;
-  innerNode[innerNodeCount].tree_id = treeId;
+  innerNode[mt][innerNodeCount[mt]].threshold = tree->threshold;
+  innerNode[mt][innerNodeCount[mt]].fid = tree->fid;
+  innerNode[mt][innerNodeCount[mt]].tree_id = treeId % S;
   Byte* bv = (Byte *) malloc(b*sizeof(Byte));
-  innerNode[innerNodeCount].bitvector = bv;
+  innerNode[mt][innerNodeCount[mt]].bitvector = bv;
   // calculate bitvector for the node tree using the structure of the tree
   calBitvector(bv, tree, treeId);
-  innerNodeCount++;
+  innerNodeCount[mt]++;
   // recursion for left and right
   traverse_tree_for_inner(tree->left, treeId);
   traverse_tree_for_inner(tree->right, treeId);
@@ -221,12 +221,12 @@ void sort_and_gen()
   int i, j;
   int *featureQSNodeCount = (int *) malloc(numberOfFeatures * sizeof(int));
   for (i=0; i<numberOfFeatures; i++) {
-    featureQSNode[i] = (QSNode **) malloc(maxNumberOfLeaves * nbTrees * sizeof(QSNode *));
+    featureQSNode[i] = (QSNode **) malloc(maxNumberOfLeaves * mtSize * sizeof(QSNode *));
     featureQSNodeCount[i] = 0;
   }
-  for (i=0; i<innerNodeCount; i++) {
-    int currentFid = innerNode[i].fid;
-    featureQSNode[currentFid][featureQSNodeCount[currentFid]] = &innerNode[i];
+  for (i=0; i<innerNodeCount[mt]; i++) {
+    int currentFid = innerNode[mt][i].fid;
+    featureQSNode[currentFid][featureQSNodeCount[currentFid]] = &innerNode[mt][i];
     featureQSNodeCount[currentFid]++;
   }
   // 2. For each array, sort it by thresholds.
@@ -235,25 +235,25 @@ void sort_and_gen()
       qsort(featureQSNode[i], featureQSNodeCount[i], sizeof(QSNode *), mycmp);
   }
   // 3. Generate the related data structures: thresholds, tree_ids, bitvectors and offsets.
-  thresholds = (float *) malloc(innerNodeCount * sizeof(float));
-  tree_ids = (unsigned int*) malloc(innerNodeCount * sizeof(unsigned int));
-  offsets = (unsigned int*) malloc((numberOfFeatures+1) * sizeof(unsigned int));
-  bitvectors = (Byte **) malloc(innerNodeCount * sizeof(Byte *));
-  for (i=0; i<innerNodeCount; i++)
-    bitvectors[i] = (Byte *) malloc(b*sizeof(Byte));
+  thresholds[mt] = (float *) malloc(innerNodeCount[mt] * sizeof(float));
+  tree_ids[mt] = (unsigned int*) malloc(innerNodeCount[mt] * sizeof(unsigned int));
+  offsets[mt] = (unsigned int*) malloc((numberOfFeatures+1) * sizeof(unsigned int));
+  bitvectors[mt] = (Byte **) malloc(innerNodeCount[mt] * sizeof(Byte *));
+  for (i=0; i<innerNodeCount[mt]; i++)
+    bitvectors[mt][i] = (Byte *) malloc(b*sizeof(Byte));
   int counter=0;
   for (i=0; i<numberOfFeatures; i++) {
-    offsets[i] = counter;
+    offsets[mt][i] = counter;
     for (j=0; j<featureQSNodeCount[i]; j++) {
-      thresholds[counter] = featureQSNode[i][j]->threshold;
-      tree_ids[counter] = featureQSNode[i][j]->tree_id;
+      thresholds[mt][counter] = featureQSNode[i][j]->threshold;
+      tree_ids[mt][counter] = featureQSNode[i][j]->tree_id;
       int l;
       for (l=0; l<b; l++)
-        bitvectors[counter][l] = featureQSNode[i][j]->bitvector[l];
+        bitvectors[mt][counter][l] = featureQSNode[i][j]->bitvector[l];
       counter++;
     }
   }
-  offsets[numberOfFeatures] = counter; // write the last offsets
+  offsets[mt][numberOfFeatures] = counter; // write the last offsets
 
   printf("Finish generating essential QS data structures.\n");
   // 4. free space
@@ -263,19 +263,19 @@ void sort_and_gen()
   free(featureQSNode);
   
   // print as testing
-  /*
-  printf("counter=%d\noffsets:", counter);
+  /*printf("counter=%d\noffsets:", counter);
   for (i=0; i<numberOfFeatures; i++)
-    printf("%d\t", offsets[i]);
+    printf("%d\t", offsets[mt][i]);
   printf("\n");
   for (i=0; i<counter; i++)
   {
     printf("i=%d", i);
-    printf(" thresholds[i]=%f tree_ids[i]=%d bitvector[i]:", thresholds[i], tree_ids[i]);
+    printf(" thresholds[i]=%f tree_ids[i]=%d bitvector[i]:", thresholds[mt][i], tree_ids[mt][i]);
     for (j=0; j<b; j++)
-      printf("%d ", bitvectors[i][j]);
+      printf("%d ", bitvectors[mt][i][j]);
     printf("\n");
   }
+  printf("**************\n");
   */
 }
 
@@ -285,10 +285,16 @@ void gen_QS()
     numberOfMetaTree = nbTrees / S;
   else
     numberOfMetaTree = nbTrees / S + 1;
+  leavesCount = (int *) malloc(numberOfMetaTree * sizeof(int));
+  innerNodeCount = (int *) malloc(numberOfMetaTree * sizeof(int));
   leaves = (double **) malloc(numberOfMetaTree * sizeof(double *));
   leavesContent = (StructPlus ***) malloc(numberOfMetaTree * sizeof(StructPlus **));
   innerNode = (QSNode **) malloc(numberOfMetaTree * sizeof(QSNode *));
   
+  thresholds = (float **) malloc(numberOfMetaTree * sizeof(float *));
+  tree_ids = (unsigned int**) malloc(numberOfMetaTree * sizeof(unsigned int *));
+  offsets = (unsigned int**) malloc(numberOfMetaTree * sizeof(unsigned int *));
+  bitvectors = (Byte ***) malloc(numberOfMetaTree * sizeof(Byte **));
   // deal with one MetaTree at a time
   for (mt=0; mt<numberOfMetaTree; mt++)   
   {
@@ -304,8 +310,9 @@ void gen_QS()
 
     int i;
     leavesCount[mt] = 0;
-    for (i=0; i<mtSize; i++)
+    for (i=0; i<mtSize; i++){
       traverse_tree_for_leaves(trees[mt*S+i], mt*S+i);
+    }
     printf("Finish saving leaves. There are %d leaves.\n", leavesCount[mt]);
 
     // deal with inner node, generate QSNode data structure
@@ -355,24 +362,24 @@ int main(int argc, char** args) {
     free(features[i]);
   }
   free(features);
-  free(leavesCount);
+  
+  // free QS data structures
   for (mt = 0; mt<numberOfMetaTree; mt++){
-    free(leaves[mt]); free(leavesContent[mt]);
+    free(leaves[mt]); 
+    free(leavesContent[mt]);
+    for (i=0; i<innerNodeCount[mt]; i++)
+      free(innerNode[mt][i].bitvector);
+    for (i=0; i<innerNodeCount[mt]; i++)
+      free(bitvectors[mt][i]);
     free(innerNode[mt]);
+    free(bitvectors[mt]);
+    free(thresholds[mt]); free(tree_ids[mt]); free(offsets[mt]);
   }
-  /*
-  for (i=0; i<innerNodeCount; i++)
-    free(innerNode[i].bitvector);
-  for (i=0; i<innerNodeCount; i++)
-    free(bitvectors[i]);
-  free(bitvectors);
-  free(v);
-  free(leaves); 
-  free(leavesContent);
-  free(innerNode);
-  free(thresholds); free(tree_ids); free(offsets);
-  free(innerNodeCount);
-  */
+  
+  //free(v);
+  free(leavesCount); free(leaves); free(leavesContent);
+  free(innerNodeCount); free(innerNode);
+  free(bitvectors); free(thresholds); free(tree_ids); free(offsets);
   return 0;
 }
 
