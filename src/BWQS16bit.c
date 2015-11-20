@@ -8,8 +8,8 @@
 #include "ParseCommandLine.h"
 #include <stdint.h>
 
-#define D 3 // block document #
-#define S 20 // block tree #
+#define D 10 // block document #
+#define S 1000 // block tree #
 
 /**
  * Driver that evaluates test instances using the StructPlus
@@ -55,71 +55,150 @@ int* innerNodeCount;
 QSNode** innerNode;
 int b; // number of Bytes(16bit Byte) for the bitvector
 
-Byte* v; // vectors to save results
+Byte* v[D]; // vectors to save results for D documents
 
 // Compute scores for instances using QS algorithm
 void compute_QS()
 {
-  /*
   int i, j;
-  v = (Byte*) malloc(nbTrees * sizeof(Byte)); 
+  for (i=0; i<D; i++)
+    v[i] = (Byte*) malloc(S * sizeof(Byte)); 
 
   int k, p, h, begin, end;
   double score, sum;
   struct timeval tstart, tend;
-  Byte *mybitvectors = (Byte*) malloc(innerNodeCount * sizeof(Byte)); // temp variable for opt algorithm
-  for (i=0; i<innerNodeCount; i++)
-    mybitvectors[i] = bitvectors[i][0];
-  // for each instance, do QS algorithm
-  gettimeofday(&tstart, NULL);
-  for (i=0; i<numberOfInstances; i++) {
-    // init v to be 11..1
-    for (j=0; j<nbTrees; j++)
-        v[j] = 0xffff;
-    // Step 1:
-    for (j=0; j<numberOfFeatures; j++) {
-      begin = offsets[j];
-      end = offsets[j+1]; // what we need to test is [begin, end)
-      if (begin == end || features[i][j] <= thresholds[begin])
-        continue;
-      p = begin; // pointer
-      while (p<end && features[i][j] > thresholds[p]) // still false node
-      {
-        h = tree_ids[p]; // find current tree_id
-        v[h] &= mybitvectors[p];
-        p++;
-      } // endwhile
-
-    }
-    // Step 2:
-    
-    score = 0;
-    Byte test;
-    for (h=0; h<nbTrees; h++)
-    {
-      // for each tree, find the left most 1 of v[h] and assign it to j
-      j = 0;
-      int y, z;
-      for (z=0; z<16; z++) {
-        test = 0x8000; // test = 1000 0000 ... 0000
-        for (y=0; y<z; y++)
-          test = test >> 1;
-        if (v[h] & test != 0) // found!
-          break;
-        j++;
-      } // loop z
-      int l = h * maxNumberOfLeaves + j;
-      score += leaves[l];
-    }
-    sum += score;
+  // temp variable for opt algorithm
+  Byte **mybitvectors = (Byte**) malloc(numberOfMetaTree * sizeof(Byte *));
+  for (i=0; i<numberOfMetaTree; i++)
+  {
+    mybitvectors[i] = (Byte*) malloc(innerNodeCount[i] * sizeof(Byte));   
+    for (j=0; j<innerNodeCount[i]; j++)
+      mybitvectors[i][j] = bitvectors[i][j][0];
   }
+  // for each instance, do QS algorithm
+  int divideInstance = numberOfInstances / D;
+  int remainderInstance = numberOfInstances % D;
+  gettimeofday(&tstart, NULL);
+  for (i=0; i<divideInstance; i++) {
+    for (mt=0; mt<numberOfMetaTree; mt++) {
+      // each time deal with D documents and a meta tree
+      // first numberOfMetaTree-1 metaTrees contain S trees, the last one contains 1~S trees so calculate it separately
+      if (mt != numberOfMetaTree - 1) 
+        mtSize = S;
+      else
+        mtSize = nbTrees - S * (numberOfMetaTree-1);
+      // init v[][] to be 11..1
+      for (k=0; k<D; k++)
+        for (j=0; j<mtSize; j++)
+          v[k][j] = 0xffff;
+      // Step 1:
+      for (j=0; j<numberOfFeatures; j++) {
+        begin = offsets[mt][j];
+        end = offsets[mt][j+1]; // what we need to test is [begin, end)
+        if (begin == end)
+          continue;
+        for (k=0; k<D; k++) {
+          if (features[i*D+k][j] <= thresholds[mt][begin])
+            continue;
+          p = begin; // pointer
+          while (p<end && features[i*D+k][j] > thresholds[mt][p]) // still false node
+          {
+            h = tree_ids[mt][p]; // find current tree_id
+            v[k][h] &= mybitvectors[mt][p];
+            p++;
+          } // endwhile
+        }
+      }//end j
+      // Step 2:
+      Byte test;
+      for (k=0; k<D; k++) {
+        score = 0;
+        for (h=0; h<mtSize; h++)
+        {
+          // for each tree, find the left most 1 of v[k][h] and assign it to j
+          j = 0;
+          int y, z;
+          for (z=0; z<16; z++) {
+            test = 0x8000; // test = 1000 0000 ... 0000
+            for (y=0; y<z; y++)
+              test = test >> 1;
+            if (v[k][h] & test != 0) // found!
+              break;
+            j++;
+          } // loop z
+          int l = h * maxNumberOfLeaves + j;
+          score += leaves[mt][l];
+        } // end h
+        sum += score;
+      }
+    } // end mt
+  }
+  
+  
+  // NEXT, deal with remainder instances, just repeat previous steps
+  if (remainderInstance > 0){
+    int r = remainderInstance;
+    for (mt=0; mt<numberOfMetaTree; mt++) {
+      // each time deal with D documents and a meta tree
+      // first numberOfMetaTree-1 metaTrees contain S trees, the last one contains 1~S trees so calculate it separately
+      if (mt != numberOfMetaTree - 1) 
+        mtSize = S;
+      else
+        mtSize = nbTrees - S * (numberOfMetaTree-1);
+      // init v[][] to be 11..1
+      for (k=0; k<r; k++)
+        for (j=0; j<mtSize; j++)
+          v[k][j] = 0xffff;
+      // Step 1:
+      for (j=0; j<numberOfFeatures; j++) {
+        begin = offsets[mt][j];
+        end = offsets[mt][j+1]; // what we need to test is [begin, end)
+        if (begin == end)
+          continue;
+        for (k=0; k<r; k++) {
+          if (features[divideInstance*D+k][j] <= thresholds[mt][begin])
+            continue;
+          p = begin; // pointer
+          while (p<end && features[divideInstance*D+k][j] > thresholds[mt][p]) // still false node
+          {
+            h = tree_ids[mt][p]; // find current tree_id
+            v[k][h] &= mybitvectors[mt][p];
+            p++;
+          } // endwhile
+        }
+      }//end j
+      // Step 2:
+      Byte test;
+      for (k=0; k<r; k++) {
+        score = 0;
+        for (h=0; h<mtSize; h++)
+        {
+          // for each tree, find the left most 1 of v[k][h] and assign it to j
+          j = 0;
+          int y, z;
+          for (z=0; z<16; z++) {
+            test = 0x8000; // test = 1000 0000 ... 0000
+            for (y=0; y<z; y++)
+              test = test >> 1;
+            if (v[k][h] & test != 0) // found!
+              break;
+            j++;
+          } // loop z
+          int l = h * maxNumberOfLeaves + j;
+          score += leaves[mt][l];
+        } // end h
+        sum += score;
+      }
+    } // end mt
+  } // endif
   gettimeofday(&tend, NULL);
   printf("Time per instance per tree(ns): %5.2f\n", 
       (((tend.tv_sec * 1000000 + tend.tv_usec) - 
         (tstart.tv_sec * 1000000 + tstart.tv_usec))*1000/((float) numberOfInstances * nbTrees)));
   printf("Ignore this number: %lf\n", sum);
+  for (i=0; i<numberOfMetaTree; i++)
+    free(mybitvectors[i]);
   free(mybitvectors);
-  */
 }
 
 
@@ -255,7 +334,7 @@ void sort_and_gen()
   }
   offsets[mt][numberOfFeatures] = counter; // write the last offsets
 
-  printf("Finish generating essential QS data structures.\n");
+  //printf("Finish generating essential QS data structures.\n");
   // 4. free space
   free(featureQSNodeCount);
   for (i=0; i<numberOfFeatures; i++)
@@ -313,7 +392,7 @@ void gen_QS()
     for (i=0; i<mtSize; i++){
       traverse_tree_for_leaves(trees[mt*S+i], mt*S+i);
     }
-    printf("Finish saving leaves. There are %d leaves.\n", leavesCount[mt]);
+    //printf("Finish saving leaves. There are %d leaves.\n", leavesCount[mt]);
 
     // deal with inner node, generate QSNode data structure
     innerNodeCount[mt] = 0;
@@ -325,7 +404,7 @@ void gen_QS()
       b = maxNumberOfLeaves / 16 + 1;
     for (i=0; i<mtSize; i++)
       traverse_tree_for_inner(trees[mt*S+i], mt*S+i);
-    printf("Finish saving innerNodes. There are %d innerNode.\n", innerNodeCount[mt]);
+    //printf("Finish saving innerNodes. There are %d innerNode.\n", innerNodeCount[mt]);
     // sort by features and generate QS data structures
     sort_and_gen();
   }
@@ -376,7 +455,8 @@ int main(int argc, char** args) {
     free(thresholds[mt]); free(tree_ids[mt]); free(offsets[mt]);
   }
   
-  //free(v);
+  for (i=0; i<D; i++)
+    free(v[i]);
   free(leavesCount); free(leaves); free(leavesContent);
   free(innerNodeCount); free(innerNode);
   free(bitvectors); free(thresholds); free(tree_ids); free(offsets);
