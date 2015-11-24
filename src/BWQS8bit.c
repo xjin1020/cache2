@@ -8,7 +8,7 @@
 #include "ParseCommandLine.h"
 #include <stdint.h>
 
-#define D 10000
+#define D 790
 #define S 1
 
 /**
@@ -20,7 +20,7 @@
  *
  */
 typedef struct QSNode QSNode;
-typedef uint64_t Byte;
+typedef uint8_t Byte;
 
 struct QSNode {
   float threshold;
@@ -53,7 +53,7 @@ int mtSize; // current metaTree size
 int* leavesCount;
 int* innerNodeCount;
 QSNode** innerNode;
-int b; // number of Bytes(64bit Byte) for the bitvector
+int b; // number of Bytes(8bit Byte) for the bitvector
 
 Byte* v[D]; // vectors to save results for D documents
 
@@ -90,7 +90,7 @@ void compute_QS()
       // init v[][] to be 11..1
       for (k=0; k<D; k++)
         for (j=0; j<mtSize; j++)
-          v[k][j] = 0xffffffffffffffff;
+          v[k][j] = 0xff;
       // Step 1:
       for (j=0; j<numberOfFeatures; j++) {
         begin = offsets[mt][j];
@@ -118,8 +118,8 @@ void compute_QS()
           // for each tree, find the left most 1 of v[k][h] and assign it to j
           j = 0;
           int y, z;
-          for (z=0; z<64; z++) {
-            test = 0x8000000000000000; // test = 1000 0000 ... 0000
+          for (z=0; z<8; z++) {
+            test = 0x80; // test = 1000 0000 ... 0000
             for (y=0; y<z; y++)
               test = test >> 1;
             if (v[k][h] & test != 0) // found!
@@ -148,7 +148,7 @@ void compute_QS()
       // init v[][] to be 11..1
       for (k=0; k<r; k++)
         for (j=0; j<mtSize; j++)
-          v[k][j] = 0xffffffffffffffff;
+          v[k][j] = 0xff;
       // Step 1:
       for (j=0; j<numberOfFeatures; j++) {
         begin = offsets[mt][j];
@@ -176,8 +176,8 @@ void compute_QS()
           // for each tree, find the left most 1 of v[k][h] and assign it to j
           j = 0;
           int y, z;
-          for (z=0; z<64; z++) {
-            test = 0x8000000000000000; // test = 1000 0000 ... 0000
+          for (z=0; z<8; z++) {
+            test = 0x80; // test = 1000 0000 ... 0000
             for (y=0; y<z; y++)
               test = test >> 1;
             if (v[k][h] & test != 0) // found!
@@ -239,9 +239,9 @@ void setLeafBit(Byte* bv, StructPlus* tree, int treeId)
       if (leavesContent[treeId/S][(treeId%S) * maxNumberOfLeaves + i] == tree)
       {
         //if found
-        int divide = i/64;
-        int remainder = i%64;
-        bv[divide] &= ~((Byte)1 << (63-remainder));
+        int divide = i/8;
+        int remainder = i%8;
+        bv[divide] &= ~((Byte)1 << (7-remainder));
         break;
       }
   }
@@ -257,7 +257,7 @@ void calBitvector(Byte* bv, StructPlus* tree, int treeId)
   // Initialize the bitvector of this node to all '1'
   int i;
   for (i=0; i<b; i++)
-    bv[i] = (Byte)0xffffffffffffffff;
+    bv[i] = (Byte)0xff;
   // Then set all leaves of the left child's bit to '0'
   setLeafBit(bv, tree->left, treeId);
 }
@@ -398,10 +398,10 @@ void gen_QS()
     innerNodeCount[mt] = 0;
     innerNode[mt] = (QSNode *) malloc (maxNumberOfLeaves * mtSize * sizeof(QSNode));
     // calculate bitvector size needed
-    if (maxNumberOfLeaves % 64 == 0)
-      b = maxNumberOfLeaves / 64;
+    if (maxNumberOfLeaves % 8 == 0)
+      b = maxNumberOfLeaves / 8;
     else
-      b = maxNumberOfLeaves / 64 + 1;
+      b = maxNumberOfLeaves / 8 + 1;
     for (i=0; i<mtSize; i++)
       traverse_tree_for_inner(trees[mt*S+i], mt*S+i);
     //printf("Finish saving innerNodes. There are %d innerNode.\n", innerNodeCount[mt]);
