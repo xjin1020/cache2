@@ -14,6 +14,6 @@ By Xin Jin
 sample_run.sh: run a batch of jobs for LEAF number varies from 10 to 50 and 150.
 post.sh: after running sample_run.sh, use post.sh to generate google_doc results
 
-Nov. 12 2016
+Nov. 12 2015
 src/QS.c: implement Italian group's QS algorithm
 src/QS_4.c: QS algorithm with jump 4 at a time, even slower than QS.c
