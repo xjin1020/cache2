@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import sys
-fin = open('out_BWQS64', 'r')
+fin = open('out_BWQS_MS_64_run2', 'r')
 lines = fin.readlines()
 fin.close()
 time = []
