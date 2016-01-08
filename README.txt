@@ -22,3 +22,4 @@ Jan. 7. 2016
 BWQS results are generated using scripts "sample_run_BWQS_*.sh"
 To run leaf number which is not 8, 16, 32, 64, just use the closest bigger
 one. E.g. to run leaf number = 10 case, just use 16. 
+If leaf number > 64, use BWQSlarger64 to run.
