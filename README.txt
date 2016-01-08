@@ -17,3 +17,8 @@ post.sh: after running sample_run.sh, use post.sh to generate google_doc results
 Nov. 12 2015
 src/QS.c: implement Italian group's QS algorithm
 src/QS_4.c: QS algorithm with jump 4 at a time, even slower than QS.c
+
+Jan. 7. 2016
+BWQS results are generated using scripts "sample_run_BWQS_*.sh"
+To run leaf number which is not 8, 16, 32, 64, just use the closest bigger
+one. E.g. to run leaf number = 10 case, just use 16. 
