@@ -8,7 +8,7 @@
 #include "ParseCommandLine.h"
 #include <stdint.h>
 
-#define D 1
+#define D 10000
 #define S 1
 
 /**
@@ -101,7 +101,7 @@ void compute_QS()
           {
             h = tree_ids[mt][p]; // find current tree_id
             for (kk=0; kk<b; kk++)
-              v[k][h][k] &= bitvectors[mt][p][kk];
+              v[k][h][kk] &= bitvectors[mt][p][kk];
             p++;
           } // endwhile
         }
@@ -132,7 +132,6 @@ void compute_QS()
       }
     } // end mt
   }
-  
   
   // NEXT, deal with remainder instances, just repeat previous steps
   if (remainderInstance > 0){
@@ -456,9 +455,11 @@ int main(int argc, char** args) {
   }
   
   for (i=0; i<D; i++)
+  {
     for (j=0; j<S; j++)
       free(v[i][j]);
     free(v[i]);
+  }
   free(leavesCount); free(leaves); free(leavesContent);
   free(innerNodeCount); free(innerNode);
   free(bitvectors); free(thresholds); free(tree_ids); free(offsets);
