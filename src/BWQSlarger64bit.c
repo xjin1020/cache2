@@ -55,17 +55,14 @@ int* innerNodeCount;
 QSNode** innerNode;
 int b; // number of Bytes(64bit Byte) for the bitvector
 
-Byte** v[D]; // vectors to save results for D documents
+Byte* v[D]; // vectors to save results for D documents
 
 // Compute scores for instances using QS algorithm
 void compute_QS()
 {
   int i, j;
-  for (i=0; i<D; i++){
-    v[i] = (Byte**) malloc(S * sizeof(Byte *)); 
-    for (j=0; j<S; j++)
-      v[i][j] = (Byte *) malloc(b * sizeof(Byte));
-  }
+  for (i=0; i<D; i++)
+    v[i] = (Byte*) malloc(S * b * sizeof(Byte)); 
 
   int kk, k, p, h, begin, end;
   double score, sum;
@@ -82,11 +79,11 @@ void compute_QS()
         mtSize = S;
       else
         mtSize = nbTrees - S * (numberOfMetaTree-1);
-      // init v[][][] to be 11..1
+      // init v[][] to be 11..1
       for (k=0; k<D; k++)
         for (j=0; j<mtSize; j++)
           for (kk = 0; kk<b; kk++)
-            v[k][j][kk] = 0xffffffffffffffff;
+            v[k][j*b+kk] = 0xffffffffffffffff;
       // Step 1:
       for (j=0; j<numberOfFeatures; j++) {
         begin = offsets[mt][j];
@@ -101,7 +98,7 @@ void compute_QS()
           {
             h = tree_ids[mt][p]; // find current tree_id
             for (kk=0; kk<b; kk++)
-              v[k][h][kk] &= bitvectors[mt][p][kk];
+              v[k][h*b+kk] &= bitvectors[mt][p][kk];
             p++;
           } // endwhile
         }
@@ -120,7 +117,7 @@ void compute_QS()
               test = 0x8000000000000000; // test = 1000 0000 ... 0000
               for (y=0; y<z; y++)
                 test = test >> 1;
-              if (v[k][h][kk] & test != 0) // found!
+              if (v[k][h*b+kk] & test != 0) // found!
                 break;
               j++;
             } // loop z
@@ -143,11 +140,11 @@ void compute_QS()
         mtSize = S;
       else
         mtSize = nbTrees - S * (numberOfMetaTree-1);
-      // init v[][][] to be 11..1
+      // init v[][] to be 11..1
       for (k=0; k<r; k++)
         for (j=0; j<mtSize; j++)
           for (kk=0; kk<b; kk++)
-            v[k][j][kk] = 0xffffffffffffffff;
+            v[k][j*b+kk] = 0xffffffffffffffff;
       // Step 1:
       for (j=0; j<numberOfFeatures; j++) {
         begin = offsets[mt][j];
@@ -162,7 +159,7 @@ void compute_QS()
           {
             h = tree_ids[mt][p]; // find current tree_id
             for (kk=0; kk<b; kk++)
-              v[k][h][kk] &= bitvectors[mt][p][kk];
+              v[k][h*b+kk] &= bitvectors[mt][p][kk];
             p++;
           } // endwhile
         }
@@ -181,7 +178,7 @@ void compute_QS()
               test = 0x8000000000000000; // test = 1000 0000 ... 0000
               for (y=0; y<z; y++)
                 test = test >> 1;
-              if (v[k][h][kk] & test != 0) // found!
+              if (v[k][h*b+kk] & test != 0) // found!
                 break;
               j++;
             } // loop z
@@ -455,11 +452,7 @@ int main(int argc, char** args) {
   }
   
   for (i=0; i<D; i++)
-  {
-    for (j=0; j<S; j++)
-      free(v[i][j]);
     free(v[i]);
-  }
   free(leavesCount); free(leaves); free(leavesContent);
   free(innerNodeCount); free(innerNode);
   free(bitvectors); free(thresholds); free(tree_ids); free(offsets);
