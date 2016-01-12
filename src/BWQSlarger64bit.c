@@ -8,8 +8,8 @@
 #include "ParseCommandLine.h"
 #include <stdint.h>
 
-#define D 10000
-#define S 1
+#define D 1
+#define S 20000
 
 /**
  * Driver that evaluates test instances using the StructPlus

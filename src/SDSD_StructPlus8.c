@@ -8,7 +8,7 @@
 #include "ParseCommandLine.h"
 
 #define F 100000 // d
-#define T 13107 // s
+#define T 20000 // s
 #define NUM_THREADS 1
 
 /**
@@ -141,38 +141,35 @@ int main(int argc, char** args) {
   float score;
   struct timeval start, end;
 
-  int remainder;
+  int remainder, remainder_F;
   remainder = nbTrees % T;
-  int remainder_F;
   remainder_F = numberOfInstances % F;
   gettimeofday(&start, NULL);
   
-    //DSDS  
-    for (iIndex = 0; iIndex < numberOfInstances - remainder_F; iIndex+=F){
-        score = 0;
-        for (tindex = 0; tindex < nbTrees - remainder; tindex+=T) 
-            for (i=0; i<F; i++)
-                for (j=0; j<T; j++)
-                    score += getLeaf(trees[tindex+j], features[iIndex+i])->threshold;
-        // deal with remaining trees
-        for (i=0; i<F; i++)
-            for (j=0; j<remainder; j++)
-                    score += getLeaf(trees[nbTrees - remainder +j], features[iIndex+i])->threshold;
-        if (printScores) 
-            printf("%f\n", score);
-    sum += score;
-    }
-  
-    //deal with remaining docs
+  //SDSD  
+  for (tindex = 0; tindex < nbTrees - remainder; tindex+=T) {
     score = 0;
-    for (tindex = 0; tindex < nbTrees - remainder; tindex+=T) 
+    for (iIndex = 0; iIndex < numberOfInstances - remainder_F; iIndex+=F)
+      for (j=0; j<T; j++)
+        for (i=0; i<F; i++)
+          score += getLeaf(trees[tindex+j], features[iIndex+i])->threshold;
+    for (j=0; j<T; j++)
         for (i=0; i<remainder_F; i++)
-            for (j=0; j<T; j++)
-                score += getLeaf(trees[tindex+j], features[numberOfInstances - remainder_F + i])->threshold;
-    // deal with remaining trees
+          score += getLeaf(trees[tindex+j], features[numberOfInstances - remainder_F + i])->threshold;
+    if (printScores) 
+      printf("%f\n", score);
+    sum += score;
+  }
+  
+  //deal with remain trees
+  score = 0;
+  for (iIndex = 0; iIndex < numberOfInstances - remainder_F; iIndex+=F)
+    for (j=0; j<remainder; j++)
+      for (i=0; i<F; i++)
+        score += getLeaf(trees[nbTrees - remainder+j], features[iIndex+i])->threshold;
+  for (j=0; j<remainder; j++)
     for (i=0; i<remainder_F; i++)
-        for (j=0; j<remainder; j++)
-                score += getLeaf(trees[nbTrees - remainder +j], features[numberOfInstances - remainder_F + i])->threshold;
+        score += getLeaf(trees[nbTrees - remainder+j], features[numberOfInstances - remainder_F + i])->threshold;
   
   gettimeofday(&end, NULL);
   

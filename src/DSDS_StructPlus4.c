@@ -7,8 +7,8 @@
 #include "StructPlus.h"
 #include "ParseCommandLine.h"
 
-#define F 45765 // d
-#define T 218 // s
+#define F 2989 // d
+#define T 3276 // s
 #define NUM_THREADS 1
 
 /**

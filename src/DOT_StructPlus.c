@@ -170,7 +170,7 @@ int main(int argc, char** args) {
 
   printf("Time per instance (ns): %5.2f\n",
          (((end.tv_sec * 1000000 + end.tv_usec) -
-           (start.tv_sec * 1000000 + start.tv_usec))*1000/((float) numberOfInstances)));
+           (start.tv_sec * 1000000 + start.tv_usec))*1000/((float) numberOfInstances * nbTrees)));
   printf("Ignore this number: %f\n", sum);
 
   // Free used memory
