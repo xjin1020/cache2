@@ -1,0 +1,170 @@
+D=1 S=20000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3320.78
+Ignore this number: 1812981.976458
+D=10 S=20000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3558.16
+Ignore this number: 1812981.976458
+D=100 S=20000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4410.28
+Ignore this number: 1812981.976458
+D=1000 S=20000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4422.92
+Ignore this number: 1812981.976458
+D=10000 S=20000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4341.72
+Ignore this number: 1812981.976458
+D=1 S=10000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3244.05
+Ignore this number: 1812981.976458
+D=10 S=10000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3306.24
+Ignore this number: 1812981.976458
+D=100 S=10000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4026.80
+Ignore this number: 1812981.976458
+D=1000 S=10000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4064.06
+Ignore this number: 1812981.976458
+D=10000 S=10000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4046.74
+Ignore this number: 1812981.976458
+D=1 S=5000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3191.02
+Ignore this number: 1812981.976458
+D=10 S=5000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3156.76
+Ignore this number: 1812981.976458
+D=100 S=5000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3955.80
+Ignore this number: 1812981.976458
+D=1000 S=5000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4066.42
+Ignore this number: 1812981.976458
+D=10000 S=5000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4055.90
+Ignore this number: 1812981.976458
+D=1 S=2000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3209.38
+Ignore this number: 1812981.976458
+D=10 S=2000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3084.79
+Ignore this number: 1812981.976458
+D=100 S=2000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3300.11
+Ignore this number: 1812981.976458
+D=1000 S=2000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4149.99
+Ignore this number: 1812981.976458
+D=10000 S=2000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4135.46
+Ignore this number: 1812981.976458
+D=1 S=1000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3205.78
+Ignore this number: 1812981.976458
+./sample_run_BWQS_Yahoo.sh: line 6: 22384 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=10 S=1000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3065.42
+Ignore this number: 1812981.976458
+./sample_run_BWQS_Yahoo.sh: line 6: 22437 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=100 S=1000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3199.12
+Ignore this number: 1812981.976458
+./sample_run_BWQS_Yahoo.sh: line 6: 22503 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=1000 S=1000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4142.59
+Ignore this number: 1812981.976458
+./sample_run_BWQS_Yahoo.sh: line 6: 22552 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=10000 S=1000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4260.41
+Ignore this number: 1812981.976458
+./sample_run_BWQS_Yahoo.sh: line 6: 22642 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=1 S=100
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3136.46
+Ignore this number: 1812981.976455
+./sample_run_BWQS_Yahoo.sh: line 6: 22709 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=10 S=100
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 2502.24
+Ignore this number: 1812981.976449
+./sample_run_BWQS_Yahoo.sh: line 6: 22796 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=100 S=100
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 2958.55
+Ignore this number: 1812981.976447
+./sample_run_BWQS_Yahoo.sh: line 6: 22842 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=1000 S=100
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3191.40
+Ignore this number: 1812981.976447
+./sample_run_BWQS_Yahoo.sh: line 6: 22888 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=10000 S=100
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3939.97
+Ignore this number: 1812981.976451
+./sample_run_BWQS_Yahoo.sh: line 6: 22959 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=1 S=10
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3844.18
+Ignore this number: 1812981.976455
+./sample_run_BWQS_Yahoo.sh: line 6: 23032 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=10 S=10
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 2662.74
+Ignore this number: 1812981.976449
+./sample_run_BWQS_Yahoo.sh: line 6: 23105 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=100 S=10
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3234.31
+Ignore this number: 1812981.976447
+./sample_run_BWQS_Yahoo.sh: line 6: 23150 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=1000 S=10
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3237.73
+Ignore this number: 1812981.976446
+./sample_run_BWQS_Yahoo.sh: line 6: 23200 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=10000 S=10
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3613.78
+Ignore this number: 1812981.976450
+./sample_run_BWQS_Yahoo.sh: line 6: 23262 Aborted                 (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=1 S=1
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+./sample_run_BWQS_Yahoo.sh: line 6: 23331 Segmentation fault      (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=10 S=1
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+./sample_run_BWQS_Yahoo.sh: line 6: 23440 Segmentation fault      (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=100 S=1
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+./sample_run_BWQS_Yahoo.sh: line 6: 23513 Segmentation fault      (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=1000 S=1
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+./sample_run_BWQS_Yahoo.sh: line 6: 23565 Segmentation fault      (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150
+D=10000 S=1
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+./sample_run_BWQS_Yahoo.sh: line 6: 23649 Segmentation fault      (core dumped) out/BWQSlarger64bit -ensemble /home/xin_jin/fast_rank/tree_model/yahoo/xin/leaf_150/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/yahoo/10k.txt -maxLeaves 150

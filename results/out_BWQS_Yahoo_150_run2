@@ -1,0 +1,160 @@
+D=1 S=20000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3236.97
+Ignore this number: 1812981.976458
+D=10 S=20000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3353.45
+Ignore this number: 1812981.976458
+D=100 S=20000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4067.01
+Ignore this number: 1812981.976458
+D=1000 S=20000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4099.49
+Ignore this number: 1812981.976458
+D=10000 S=20000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4110.26
+Ignore this number: 1812981.976458
+D=1 S=10000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3213.69
+Ignore this number: 1812981.976458
+D=10 S=10000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3206.99
+Ignore this number: 1812981.976458
+D=100 S=10000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3939.47
+Ignore this number: 1812981.976458
+D=1000 S=10000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4024.72
+Ignore this number: 1812981.976458
+D=10000 S=10000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3988.10
+Ignore this number: 1812981.976458
+D=1 S=5000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3201.00
+Ignore this number: 1812981.976458
+D=10 S=5000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3082.66
+Ignore this number: 1812981.976458
+D=100 S=5000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3547.75
+Ignore this number: 1812981.976458
+D=1000 S=5000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3981.47
+Ignore this number: 1812981.976458
+D=10000 S=5000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3967.87
+Ignore this number: 1812981.976458
+D=1 S=2000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3216.25
+Ignore this number: 1812981.976458
+D=10 S=2000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3054.53
+Ignore this number: 1812981.976458
+D=100 S=2000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3208.14
+Ignore this number: 1812981.976458
+D=1000 S=2000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3935.20
+Ignore this number: 1812981.976458
+D=10000 S=2000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3939.74
+Ignore this number: 1812981.976458
+D=1 S=1000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3212.28
+Ignore this number: 1812981.976458
+D=10 S=1000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3038.40
+Ignore this number: 1812981.976458
+D=100 S=1000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3114.93
+Ignore this number: 1812981.976458
+D=1000 S=1000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3839.59
+Ignore this number: 1812981.976458
+D=10000 S=1000
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3923.35
+Ignore this number: 1812981.976458
+D=1 S=100
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3257.50
+Ignore this number: 1812981.976455
+D=10 S=100
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 2869.29
+Ignore this number: 1812981.976449
+D=100 S=100
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3029.05
+Ignore this number: 1812981.976447
+D=1000 S=100
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3109.72
+Ignore this number: 1812981.976447
+D=10000 S=100
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3822.30
+Ignore this number: 1812981.976451
+D=1 S=10
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3977.63
+Ignore this number: 1812981.976455
+D=10 S=10
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3051.16
+Ignore this number: 1812981.976449
+D=100 S=10
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3275.88
+Ignore this number: 1812981.976447
+D=1000 S=10
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3283.23
+Ignore this number: 1812981.976446
+D=10000 S=10
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3675.10
+Ignore this number: 1812981.976450
+D=1 S=1
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 6324.09
+Ignore this number: 1812981.976455
+D=10 S=1
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3857.56
+Ignore this number: 1812981.976449
+D=100 S=1
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3201.45
+Ignore this number: 1812981.976447
+D=1000 S=1
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 3237.52
+Ignore this number: 1812981.976446
+D=10000 S=1
+gcc -o out/BWQSlarger64bit src/BWQSlarger64bit.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 4291.76
+Ignore this number: 1812981.976450

@@ -1,0 +1,591 @@
+result of Leaf_num=10
+FF=40
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 11.00
+Ignore this number: -71079464.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+       466,600,986 LLC-loads                                                   
+        32,957,764 LLC-load-misses           #    7.06% of all LL-cache hits   
+    47,259,693,564 L1-dcache-loads                                             
+       380,276,031 L1-dcache-load-misses     #    0.80% of all L1-dcache hits  
+
+      23.520145405 seconds time elapsed
+
+FF=89
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns):  9.82
+Ignore this number: -71071568.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     1,046,932,896 LLC-loads                                                   
+        14,082,488 LLC-load-misses           #    1.35% of all LL-cache hits   
+    45,814,412,188 L1-dcache-loads                                             
+       840,201,692 L1-dcache-load-misses     #    1.83% of all L1-dcache hits  
+
+      21.069533873 seconds time elapsed
+
+FF=200
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns):  9.64
+Ignore this number: -71052080.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,523,650,120 LLC-loads                                                   
+         7,077,930 LLC-load-misses           #    0.20% of all LL-cache hits   
+    46,304,997,582 L1-dcache-loads                                             
+     2,363,009,384 L1-dcache-load-misses     #    5.10% of all L1-dcache hits  
+
+      20.708843762 seconds time elapsed
+
+FF=500
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns):  9.06
+Ignore this number: -71211968.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,795,860,056 LLC-loads                                                   
+         3,387,160 LLC-load-misses           #    0.09% of all LL-cache hits   
+    46,318,262,178 L1-dcache-loads                                             
+     2,461,244,193 L1-dcache-load-misses     #    5.31% of all L1-dcache hits  
+
+      19.533780175 seconds time elapsed
+
+FF=1000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns):  8.74
+Ignore this number: -70164152.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,780,354,148 LLC-loads                                                   
+         2,107,624 LLC-load-misses           #    0.06% of all LL-cache hits   
+    46,336,780,145 L1-dcache-loads                                             
+     2,474,375,556 L1-dcache-load-misses     #    5.34% of all L1-dcache hits  
+
+      18.892845658 seconds time elapsed
+
+FF=2000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns):  8.67
+Ignore this number: -65750700.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,770,007,261 LLC-loads                                                   
+         1,502,772 LLC-load-misses           #    0.04% of all LL-cache hits   
+    46,420,525,934 L1-dcache-loads                                             
+     2,533,236,937 L1-dcache-load-misses     #    5.46% of all L1-dcache hits  
+
+      18.758507765 seconds time elapsed
+
+FF=5000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns):  8.50
+Ignore this number: -58838812.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,773,612,105 LLC-loads                                                   
+         1,211,271 LLC-load-misses           #    0.03% of all LL-cache hits   
+    46,490,476,898 L1-dcache-loads                                             
+     2,548,488,282 L1-dcache-load-misses     #    5.48% of all L1-dcache hits  
+
+      18.453690168 seconds time elapsed
+
+FF=11441
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns):  9.91
+Ignore this number: -52013896.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,775,822,046 LLC-loads                                                   
+       257,139,010 LLC-load-misses           #    6.81% of all LL-cache hits   
+    47,741,114,170 L1-dcache-loads                                             
+     2,501,990,552 L1-dcache-load-misses     #    5.24% of all L1-dcache hits  
+
+      21.231353113 seconds time elapsed
+
+FF=20000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 12.69
+Ignore this number: -44871316.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,785,136,110 LLC-loads                                                   
+     1,045,856,312 LLC-load-misses           #   27.63% of all LL-cache hits   
+    47,717,251,239 L1-dcache-loads                                             
+     2,414,792,633 L1-dcache-load-misses     #    5.06% of all L1-dcache hits  
+
+      26.813343245 seconds time elapsed
+
+FF=35000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 13.97
+Ignore this number: -42622408.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,792,480,779 LLC-loads                                                   
+     1,315,481,180 LLC-load-misses           #   34.69% of all LL-cache hits   
+    51,768,021,133 L1-dcache-loads                                             
+     2,384,601,599 L1-dcache-load-misses     #    4.61% of all L1-dcache hits  
+
+      29.358822889 seconds time elapsed
+
+FF=45765
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 13.81
+Ignore this number: -38841960.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,791,768,399 LLC-loads                                                   
+     1,321,078,959 LLC-load-misses           #   34.84% of all LL-cache hits   
+    48,872,449,772 L1-dcache-loads                                             
+     2,403,903,972 L1-dcache-load-misses     #    4.92% of all L1-dcache hits  
+
+      29.039902718 seconds time elapsed
+
+FF=60000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 16.20
+Ignore this number: -33996408.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,793,891,990 LLC-loads                                                   
+     1,167,343,822 LLC-load-misses           #   30.77% of all LL-cache hits   
+    53,071,861,663 L1-dcache-loads                                             
+     2,376,193,063 L1-dcache-load-misses     #    4.48% of all L1-dcache hits  
+
+      33.821639885 seconds time elapsed
+
+FF=75000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 17.74
+Ignore this number: -29698932.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,802,327,178 LLC-loads                                                   
+     1,105,202,059 LLC-load-misses           #   29.07% of all LL-cache hits   
+    51,308,355,041 L1-dcache-loads                                             
+     2,378,766,240 L1-dcache-load-misses     #    4.64% of all L1-dcache hits  
+
+      36.912151181 seconds time elapsed
+
+FF=100000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 19.77
+Ignore this number: -21025960.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_10 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 10':
+
+     3,805,613,813 LLC-loads                                                   
+     1,132,668,966 LLC-load-misses           #   29.76% of all LL-cache hits   
+    48,518,557,949 L1-dcache-loads                                             
+     2,366,926,758 L1-dcache-load-misses     #    4.88% of all L1-dcache hits  
+
+      40.975123860 seconds time elapsed
+
+result of Leaf_num=50
+FF=40
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 39.51
+Ignore this number: -152855248.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     2,164,750,232 LLC-loads                                                   
+       342,853,536 LLC-load-misses           #   15.84% of all LL-cache hits   
+   117,096,071,214 L1-dcache-loads                                             
+     1,967,602,894 L1-dcache-load-misses     #    1.68% of all L1-dcache hits  
+
+      81.757942225 seconds time elapsed
+
+FF=89
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 33.57
+Ignore this number: -152848352.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     4,765,014,368 LLC-loads                                                   
+       167,892,861 LLC-load-misses           #    3.52% of all LL-cache hits   
+   120,427,243,419 L1-dcache-loads                                             
+     4,437,038,336 L1-dcache-load-misses     #    3.68% of all L1-dcache hits  
+
+      69.810321828 seconds time elapsed
+
+FF=200
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 29.78
+Ignore this number: -152859216.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     6,099,710,329 LLC-loads                                                   
+        79,015,066 LLC-load-misses           #    1.30% of all LL-cache hits   
+   120,533,279,394 L1-dcache-loads                                             
+     5,530,786,426 L1-dcache-load-misses     #    4.59% of all L1-dcache hits  
+
+      62.182869713 seconds time elapsed
+
+FF=500
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 27.00
+Ignore this number: -152781376.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     5,972,585,905 LLC-loads                                                   
+        33,431,999 LLC-load-misses           #    0.56% of all LL-cache hits   
+   119,532,660,049 L1-dcache-loads                                             
+     5,396,515,652 L1-dcache-load-misses     #    4.51% of all L1-dcache hits  
+
+      56.647330496 seconds time elapsed
+
+FF=1000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 25.81
+Ignore this number: -151832464.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     5,916,128,467 LLC-loads                                                   
+        17,606,413 LLC-load-misses           #    0.30% of all LL-cache hits   
+   118,961,528,340 L1-dcache-loads                                             
+     5,344,326,984 L1-dcache-load-misses     #    4.49% of all L1-dcache hits  
+
+      54.268548337 seconds time elapsed
+
+FF=2000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 25.23
+Ignore this number: -144879616.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     5,897,095,806 LLC-loads                                                   
+         9,833,333 LLC-load-misses           #    0.17% of all LL-cache hits   
+   118,613,845,065 L1-dcache-loads                                             
+     5,326,263,908 L1-dcache-load-misses     #    4.49% of all L1-dcache hits  
+
+      53.115207321 seconds time elapsed
+
+FF=5000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 24.81
+Ignore this number: -116378408.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     5,872,513,488 LLC-loads                                                   
+         6,364,141 LLC-load-misses           #    0.11% of all LL-cache hits   
+   118,276,864,293 L1-dcache-loads                                             
+     5,302,531,852 L1-dcache-load-misses     #    4.48% of all L1-dcache hits  
+
+      52.257328894 seconds time elapsed
+
+FF=11441
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 27.56
+Ignore this number: -78691072.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     5,882,196,160 LLC-loads                                                   
+       357,117,260 LLC-load-misses           #    6.07% of all LL-cache hits   
+   120,183,783,309 L1-dcache-loads                                             
+     5,284,165,776 L1-dcache-load-misses     #    4.40% of all L1-dcache hits  
+
+      57.751996835 seconds time elapsed
+
+FF=20000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 29.92
+Ignore this number: -48964876.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     5,895,575,426 LLC-loads                                                   
+       723,868,841 LLC-load-misses           #   12.28% of all LL-cache hits   
+   119,946,613,868 L1-dcache-loads                                             
+     5,266,941,899 L1-dcache-load-misses     #    4.39% of all L1-dcache hits  
+
+      62.487621795 seconds time elapsed
+
+FF=35000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 30.30
+Ignore this number: -33608528.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     5,898,371,660 LLC-loads                                                   
+       711,848,478 LLC-load-misses           #   12.07% of all LL-cache hits   
+   123,918,684,450 L1-dcache-loads                                             
+     5,277,541,840 L1-dcache-load-misses     #    4.26% of all L1-dcache hits  
+
+      63.253974624 seconds time elapsed
+
+FF=45765
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 31.48
+Ignore this number: -34741656.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     5,890,562,330 LLC-loads                                                   
+       684,945,543 LLC-load-misses           #   11.63% of all LL-cache hits   
+   120,898,248,390 L1-dcache-loads                                             
+     5,267,467,220 L1-dcache-load-misses     #    4.36% of all L1-dcache hits  
+
+      65.603724042 seconds time elapsed
+
+FF=60000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 35.38
+Ignore this number: -29860068.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     5,900,985,148 LLC-loads                                                   
+       669,861,540 LLC-load-misses           #   11.35% of all LL-cache hits   
+   125,538,049,490 L1-dcache-loads                                             
+     5,269,505,418 L1-dcache-load-misses     #    4.20% of all L1-dcache hits  
+
+      73.408336444 seconds time elapsed
+
+FF=75000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 37.18
+Ignore this number: -31125068.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     5,905,405,047 LLC-loads                                                   
+       674,137,302 LLC-load-misses           #   11.42% of all LL-cache hits   
+   123,852,714,190 L1-dcache-loads                                             
+     5,260,328,116 L1-dcache-load-misses     #    4.25% of all L1-dcache hits  
+
+      77.011977326 seconds time elapsed
+
+FF=100000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 39.35
+Ignore this number: -26364366.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_50 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 50':
+
+     5,906,415,871 LLC-loads                                                   
+       688,318,338 LLC-load-misses           #   11.65% of all LL-cache hits   
+   120,783,158,641 L1-dcache-loads                                             
+     5,244,880,603 L1-dcache-load-misses     #    4.34% of all L1-dcache hits  
+
+      81.352805010 seconds time elapsed
+
+result of Leaf_num=150
+FF=40
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 86.03
+Ignore this number: -219611312.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     7,217,833,677 LLC-loads                                                   
+     1,124,350,598 LLC-load-misses           #   15.58% of all LL-cache hits   
+   208,234,981,187 L1-dcache-loads                                             
+     6,562,053,417 L1-dcache-load-misses     #    3.15% of all L1-dcache hits  
+
+     178.813336434 seconds time elapsed
+
+FF=89
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 71.86
+Ignore this number: -219607904.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     9,107,226,195 LLC-loads                                                   
+       592,094,737 LLC-load-misses           #    6.50% of all LL-cache hits   
+   214,740,023,632 L1-dcache-loads                                             
+     8,533,053,750 L1-dcache-load-misses     #    3.97% of all L1-dcache hits  
+
+     150.296402755 seconds time elapsed
+
+FF=200
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 62.13
+Ignore this number: -219600512.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     8,566,773,406 LLC-loads                                                   
+       281,957,779 LLC-load-misses           #    3.29% of all LL-cache hits   
+   214,342,942,683 L1-dcache-loads                                             
+     8,080,811,731 L1-dcache-load-misses     #    3.77% of all L1-dcache hits  
+
+     130.529058506 seconds time elapsed
+
+FF=500
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 56.14
+Ignore this number: -219512240.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     8,184,077,203 LLC-loads                                                   
+       118,138,874 LLC-load-misses           #    1.44% of all LL-cache hits   
+   213,207,849,607 L1-dcache-loads                                             
+     7,738,768,306 L1-dcache-load-misses     #    3.63% of all L1-dcache hits  
+
+     118.553278408 seconds time elapsed
+
+FF=1000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 53.82
+Ignore this number: -218796128.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     7,999,832,147 LLC-loads                                                   
+        61,663,784 LLC-load-misses           #    0.77% of all LL-cache hits   
+   212,507,654,363 L1-dcache-loads                                             
+     7,567,014,794 L1-dcache-load-misses     #    3.56% of all L1-dcache hits  
+
+     113.902026500 seconds time elapsed
+
+FF=2000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 52.65
+Ignore this number: -214855488.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     7,921,681,164 LLC-loads                                                   
+        33,381,654 LLC-load-misses           #    0.42% of all LL-cache hits   
+   212,204,947,611 L1-dcache-loads                                             
+     7,499,370,513 L1-dcache-load-misses     #    3.53% of all L1-dcache hits  
+
+     111.544790393 seconds time elapsed
+
+FF=5000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 51.99
+Ignore this number: -179052208.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     7,890,100,667 LLC-loads                                                   
+        43,361,029 LLC-load-misses           #    0.55% of all LL-cache hits   
+   211,941,838,259 L1-dcache-loads                                             
+     7,461,948,531 L1-dcache-load-misses     #    3.52% of all L1-dcache hits  
+
+     110.264449384 seconds time elapsed
+
+FF=11441
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 53.90
+Ignore this number: -135627504.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     7,885,234,007 LLC-loads                                                   
+       307,491,228 LLC-load-misses           #    3.90% of all LL-cache hits   
+   213,260,863,560 L1-dcache-loads                                             
+     7,447,750,450 L1-dcache-load-misses     #    3.49% of all L1-dcache hits  
+
+     114.162834118 seconds time elapsed
+
+FF=20000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 54.36
+Ignore this number: -97791584.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     8,090,167,579 LLC-loads                                                   
+       388,517,254 LLC-load-misses           #    4.80% of all LL-cache hits   
+   212,344,281,234 L1-dcache-loads                                             
+     7,652,370,750 L1-dcache-load-misses     #    3.60% of all L1-dcache hits  
+
+     115.536023780 seconds time elapsed
+
+FF=35000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 57.85
+Ignore this number: -73778168.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     7,890,646,232 LLC-loads                                                   
+       395,598,399 LLC-load-misses           #    5.01% of all LL-cache hits   
+   215,968,372,961 L1-dcache-loads                                             
+     7,438,235,856 L1-dcache-load-misses     #    3.44% of all L1-dcache hits  
+
+     121.991086801 seconds time elapsed
+
+FF=45765
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 57.11
+Ignore this number: -69785256.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     7,910,805,200 LLC-loads                                                   
+       382,507,076 LLC-load-misses           #    4.84% of all LL-cache hits   
+   213,332,513,701 L1-dcache-loads                                             
+     7,462,777,335 L1-dcache-load-misses     #    3.50% of all L1-dcache hits  
+
+     120.522678445 seconds time elapsed
+
+FF=60000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 60.09
+Ignore this number: -60262728.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     7,944,008,661 LLC-loads                                                   
+       391,466,704 LLC-load-misses           #    4.93% of all LL-cache hits   
+   217,215,715,704 L1-dcache-loads                                             
+     7,486,750,816 L1-dcache-load-misses     #    3.45% of all L1-dcache hits  
+
+     126.526390942 seconds time elapsed
+
+FF=75000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 61.63
+Ignore this number: -55495056.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     7,873,724,507 LLC-loads                                                   
+       399,348,479 LLC-load-misses           #    5.07% of all LL-cache hits   
+   215,607,003,259 L1-dcache-loads                                             
+     7,419,759,763 L1-dcache-load-misses     #    3.44% of all L1-dcache hits  
+
+     129.510758460 seconds time elapsed
+
+FF=100000
+gcc -o out/DSD_StructPlus1 src/DSD_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+Time per instance per tree(ns): 63.60
+Ignore this number: -33554432.000000
+
+ Performance counter stats for 'out/DSD_StructPlus1 -ensemble /home/xin_jin/fast_rank/tree_model/MQ2007/tree-ensemble-file_20000_150 -instances /home/xin_jin/fast_rank/input/MQ2007/100k.txt -maxLeaves 150':
+
+     7,893,256,399 LLC-loads                                                   
+       409,532,322 LLC-load-misses           #    5.19% of all LL-cache hits   
+   212,853,491,590 L1-dcache-loads                                             
+     7,440,017,846 L1-dcache-load-misses     #    3.50% of all L1-dcache hits  
+
+     133.473953862 seconds time elapsed
+
