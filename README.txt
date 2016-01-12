@@ -23,3 +23,6 @@ BWQS results are generated using scripts "sample_run_BWQS_*.sh"
 To run leaf number which is not 8, 16, 32, 64, just use the closest bigger
 one. E.g. to run leaf number = 10 case, just use 16. 
 If leaf number > 64, use BWQSlarger64 to run.
+
+Jan. 12. 2016
+single_batch_Yahoo_new.sh: generate the new 8, 9, 10 cases for SDSD and DSDS
