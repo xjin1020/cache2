@@ -19,7 +19,7 @@ sed -i "s/#define F.*/#define F 100000 \/\/ d/g" src/DSDS_StructPlus6.c
 sed -i "s/#define F.*/#define F 100000 \/\/ d/g" src/DSDS_StructPlus7.c
 
 sed -i "s/#define F.*/#define F 5 \/\/ d/g" src/DSD_StructPlus1.c
-sed -i "s/#define F.*/#define F 747 \/\/ d/g" src/DSD_StructPlus2.c
+sed -i "s/#define F.*/#define F 375 \/\/ d/g" src/DSD_StructPlus2.c
 sed -i "s/#define F.*/#define F 2989 \/\/ d/g" src/DSD_StructPlus3.c
 sed -i "s/#define F.*/#define F 100000 \/\/ d/g" src/DSD_StructPlus4.c
 
