@@ -1,0 +1,54 @@
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=10
+SDS1
+Time per instance per tree(ns): 12.64
+Ignore this number: -718107520.000000
+SDS2
+Time per instance per tree(ns): 20.29
+Ignore this number: -134624176.000000
+SDS3
+Time per instance per tree(ns): 28.77
+Ignore this number: -67639232.000000
+SDS4
+Time per instance per tree(ns): 35.69
+Ignore this number: -34365548.000000
+
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=50
+SDS1
+Time per instance per tree(ns): 32.94
+Ignore this number: -1527728768.000000
+SDS2
+Time per instance per tree(ns): 60.13
+Ignore this number: -383257152.000000
+SDS3
+Time per instance per tree(ns): 83.94
+Ignore this number: -167789136.000000
+SDS4
+Time per instance per tree(ns): 188.86
+Ignore this number: -33554460.000000
+
+gcc -o out/SDS_StructPlus1 src/SDS_StructPlus1.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus2 src/SDS_StructPlus2.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus3 src/SDS_StructPlus3.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+gcc -o out/SDS_StructPlus4 src/SDS_StructPlus4.c -lm -O3 -fomit-frame-pointer -pipe -lpthread
+result of Leaf_num=150
+SDS1
+Time per instance per tree(ns): 63.62
+Ignore this number: -2196140544.000000
+SDS2
+Time per instance per tree(ns): 107.57
+Ignore this number: -1181099392.000000
+SDS3
+Time per instance per tree(ns): 140.74
+Ignore this number: -515246816.000000
+SDS4
+Time per instance per tree(ns): 349.97
+Ignore this number: -33554544.000000
+
